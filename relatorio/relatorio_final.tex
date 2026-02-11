@@ -1,0 +1,190 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[portuguese]{babel}
+\usepackage{graphicx}
+\usepackage{geometry}
+\usepackage{hyperref}
+\usepackage{listings}
+\usepackage{color}
+\usepackage{titlesec}
+\usepackage{setspace} 
+
+\geometry{
+ a4paper,
+ total={170mm,257mm},
+ left=25mm,
+ top=25mm,
+ right=25mm,
+ bottom=25mm,
+}
+
+\onehalfspacing
+
+\begin{document}
+
+\begin{titlepage}
+    \centering
+    \vspace*{1cm}
+    
+
+    \includegraphics[width=0.4\textwidth]{logo_universidade.png}
+    
+    \vspace{1.5cm}
+    
+    \Huge
+    \textbf{Projeto Final de Licenciatura}
+    
+    \vspace{0.5cm}
+    \LARGE
+    Sistema de Deteção de Anomalias em IoT Utilizando Machine Learning
+    
+    \vspace{2.0cm}
+    
+    \textbf{Autor:}
+    \vspace{0.5cm}
+    \Large
+
+    Vasco Colaço nº52290 \\
+    
+    \vfill
+    
+    \Large
+    \textbf{Unidade Curricular:} Projeto Final \\
+    \textbf{Curso:} Licenciatura em Engenharia Informática
+    
+    \vspace{1.0cm}
+    
+    \Large
+    \today
+    
+\end{titlepage}
+
+\tableofcontents
+\newpage
+
+% =================================================================
+% CONTEÚDO DO RELATÓRIO (Baseado no tema IoT)
+% =================================================================
+
+% =================================================================
+% CONTEÚDO DO RELATÓRIO
+% =================================================================
+
+\section{Planeamento do Projeto e Escolha de Algoritmos}
+
+Este capítulo descreve o processo de decisão para a escolha da arquitetura e dos algoritmos de Machine Learning utilizados no sistema de deteção de intrusões.
+
+\subsection{Análise de Abordagens Possíveis}
+Durante a fase inicial de planeamento, foram consideradas duas hipóteses principais para a implementação do sistema de segurança:
+
+\begin{description}
+    \item[\textbf{1. Sistema em Dois Estágios (Cascata)}] \hfill \\
+    Esta abordagem consiste numa arquitetura hierárquica:
+    \begin{itemize}
+        \item \textbf{Estágio 1 (Isolation Forest):} Atua como um filtro rápido de anomalias, separando o tráfego "Normal" do anómalo.
+        \item \textbf{Estágio 2 (Classificador Supervisionado):} Ativado apenas quando uma anomalia é detetada, utilizando algoritmos como Random Forest ou SVM para classificar o tipo específico de ataque.
+    \end{itemize}
+    \textit{Vantagem: Eficiência no processamento, pois o classificador mais pesado só é executado quando necessário.}
+
+    \vspace{0.5cm}
+
+    \item[\textbf{2. Algoritmo Multi-classe (Abordagem Escolhida)}] \hfill \\
+    Utilizando um dataset rotulado de alta qualidade, é possível utilizar diretamente um classificador capaz de identificar múltiplos tipos de ataques num único passo.
+    \begin{itemize}
+        \item \textbf{Random Forest:} Robusto e fornece probabilidades por classe.
+        \item \textbf{XGBoost / LightGBM:} Extremamente rápidos e eficientes para dados de sensores e redes.
+    \end{itemize}
+\end{description}
+
+\subsection{Conclusão e Decisão Final}
+A decisão final recaiu sobre a \textbf{Opção 2: Algoritmo Multi-classe}, utilizando o \textbf{LightGBM}.
+
+\vspace{0.3cm}
+\noindent \textbf{Justificação da Escolha:}
+\begin{itemize}
+    \item \textbf{Disponibilidade de Dados:} A existência de datasets de alta qualidade, como o \textit{CIC IoT Dataset 2023} \cite{cic_iot_dataset} e o \textit{ToN\_IoT}, permite treinar modelos supervisionados com elevada eficácia.
+    \item \textbf{Eficiência:} O LightGBM é reconhecido por ser leve e rápido, características críticas para o ambiente IoT.
+    \item \textbf{Mitigação Precisa:} Para uma resposta automática eficaz, é fundamental saber a natureza do ataque (ex: distinguir um DDoS de uma Injeção SQL), algo que o Isolation Forest isoladamente não garante.
+\end{itemize}
+
+\section{Metodologia e Tratamento de Dados}
+
+\subsection{Fonte dos Dados}
+O dataset utilizado para o treino do modelo foi obtido a partir do \textit{CIC IoT Dataset 2023}. Especificamente, utilizou-se o ficheiro \texttt{Merged01.csv} para a criação do subconjunto de treino \cite{merged_csv}.
+
+\subsection{Preparação e Limpeza dos Dados}
+Os dados originais foram filtrados para focar apenas nas categorias de tráfego relevantes para o âmbito deste projeto:
+\begin{itemize}
+    \item Tráfego Normal
+    \item DDoS (Distributed Denial of Service)
+    \item Injection
+    \item Scanning
+\end{itemize}
+
+\subsection{O Desafio do Desequilíbrio de Classes}
+Uma análise inicial à distribuição das classes revelou um desequilíbrio severo nos dados, conforme demonstrado na Tabela \ref{tab:distribuicao}.
+
+\begin{table}[h]
+    \centering
+    \begin{tabular}{|l|c|c|}
+        \hline
+        \textbf{Classe} & \textbf{Quantidade Original} & \textbf{Risco Identificado} \\
+        \hline
+        DDoS & 677 271 & Classe Dominante \\
+        Normal & 16 574 & Vulnerável a Falsos Positivos \\
+        Scanning & 10 766 & Poucas Amostras \\
+        Injection & 7 689 & Risco de não deteção \\
+        \hline
+    \end{tabular}
+    \caption{Distribuição original das classes no dataset e riscos associados.}
+    \label{tab:distribuicao}
+\end{table}
+
+\noindent Este desequilíbrio representava um risco significativo de enviesamento (\textit{bias}). Um modelo treinado nestas condições tornar-se-ia "preguiçoso", classificando tudo como "DDoS" e atingindo uma precisão enganadora de cerca de 95\%, falhando completamente na deteção de outras ameaças.
+
+\subsubsection{Solução Adotada}
+Para mitigar este problema, limitou-se artificialmente o número de amostras da classe maioritária (DDoS) para \textbf{20 000 unidades}. Embora mantenha um rácio de cerca de 3:1 face à classe minoritária, este valor é perfeitamente gerível pelo LightGBM, evitando o desequilíbrio extremo de 100:1 original.
+
+\section{Implementação e Simulação}
+
+\subsection{Simulação de Rede com GNS3}
+Para validar o modelo num ambiente realista, foi utilizado o emulador de redes gráfico GNS3. Esta ferramenta permitiu a criação de uma topologia de rede virtual que imita um cenário real de IoT, onde o tráfego gerado é analisado em tempo real.
+
+\subsection{Estratégias de Mitigação}
+O sistema não se limita à deteção passiva; a arquitetura proposta inclui respostas ativas baseadas no tipo de ataque identificado.
+
+\begin{description}
+    \item[Segmentação por VLANs] \hfill \\
+    Uma das principais medidas implementadas foi a utilização de VLANs (Virtual Local Area Networks). Esta técnica permite isolar dispositivos ou segmentos de rede comprometidos, impedindo que um ataque (como um Scanning lateral) se propague para infraestruturas críticas.
+    
+    \item[Router Inteligente] \hfill \\
+    O componente central atua como um "porteiro", intercetando o tráfego, extraindo características e consultando o modelo LightGBM para decidir instantaneamente se deve:
+    \begin{itemize}
+        \item Permitir o tráfego (Normal);
+        \item Bloquear a origem (DDoS);
+        \item Gerar um alerta de segurança (Scanning/Injection).
+    \end{itemize}
+\end{description}
+
+\section{Conclusão}
+Este projeto demonstrou a viabilidade da utilização de algoritmos de Machine Learning leves, como o LightGBM, para a segurança de redes IoT. A abordagem multi-classe permitiu não só detetar intrusões, mas também classificar a sua natureza, possibilitando respostas de mitigação granulares e eficazes.
+
+% =================================================================
+% BIBLIOGRAFIA
+% =================================================================
+\begin{thebibliography}{9}
+
+\bibitem{cic_iot_dataset}
+E. C. P. Neto et al.,
+\textit{CIC IoT Dataset 2023},
+Canadian Institute for Cybersecurity (CIC),
+Disponível em: \url{http://cicresearch.ca/IOTDataset/CIC_IOT_Dataset2023/Dataset/}.
+
+\bibitem{merged_csv}
+CIC Research,
+\textit{Merged Dataset CSV (Merged01.csv)},
+Disponível em: \url{http://cicresearch.ca/IOTDataset/CIC_IOT_Dataset2023/Dataset/CSV/MERGED_CSV/Merged01.csv}.
+
+\end{thebibliography}
+
+\end{document}
