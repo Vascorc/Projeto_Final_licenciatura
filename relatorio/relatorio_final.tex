@@ -5,10 +5,20 @@
 \usepackage{geometry}
 \usepackage{hyperref}
 \usepackage{listings}
-\usepackage{color}
 \usepackage{titlesec}
 \usepackage{setspace} 
+\usepackage{float}
 
+% --- PACOTES DE DESIGN E COR ---
+\usepackage{xcolor}      % Para gerir cores
+\usepackage{caption}     % Para personalizar as legendas das figuras
+\usepackage{fancyhdr}    % Para cabeçalhos e rodapés bonitos
+\usepackage{enumitem}    % Para personalizar as listas (bullets)
+
+% --- DEFINIÇÃO DA COR "AZUL UBI" ---
+\definecolor{ubiBlue}{RGB}{0, 56, 116} 
+
+% Configuração das margens
 \geometry{
  a4paper,
  total={170mm,257mm},
@@ -18,21 +28,63 @@
  bottom=25mm,
 }
 
+% Espaçamento de 1.5 entre linhas
 \onehalfspacing
 
+% --- PERSONALIZAÇÃO ESTÉTICA ---
+
+% 1. Configurar Links
+\hypersetup{
+    colorlinks=true,
+    linkcolor=ubiBlue,
+    filecolor=ubiBlue,      
+    urlcolor=ubiBlue,
+    citecolor=ubiBlue,
+}
+
+% 2. Configurar Títulos das Secções (Azul e Negrito)
+\titleformat{\section}
+{\color{ubiBlue}\normalfont\Large\bfseries}
+{\color{ubiBlue}\thesection}{1em}{}
+
+\titleformat{\subsection}
+{\color{ubiBlue}\normalfont\large\bfseries}
+{\color{ubiBlue}\thesubsection}{1em}{}
+
+\titleformat{\subsubsection}
+{\color{ubiBlue}\normalfont\normalsize\bfseries}
+{\color{ubiBlue}\thesubsubsection}{1em}{}
+
+% 3. Configurar Legendas (Figura X: a Azul)
+\captionsetup{labelfont={color=ubiBlue,bf},textfont={it}}
+
+% 4. Configurar Listas (Bullets Azuis)
+\setlist[itemize]{label=\textcolor{ubiBlue}{\textbullet}}
+
+% 5. Configurar Cabeçalho e Rodapé (ALTERADO)
+\pagestyle{fancy}
+\fancyhf{} % Limpa todos os cabeçalhos e rodapés antigos
+\renewcommand{\headrulewidth}{0pt} % Remove a linha do cabeçalho (topo)
+
+% Coloca o número da página no Rodapé (Footer), ao Centro [C], a Azul
+\fancyfoot[C]{\textcolor{ubiBlue}{\thepage}}
+
+% --- INÍCIO DO DOCUMENTO ---
 \begin{document}
 
+% =================================================================
+% CAPA (Design Limpo)
+% =================================================================
 \begin{titlepage}
     \centering
     \vspace*{1cm}
     
-
+    % Substitui pelo ficheiro do logo real
     \includegraphics[width=0.4\textwidth]{logo_universidade.png}
     
     \vspace{1.5cm}
     
-    \Huge
-    \textbf{Projeto Final de Licenciatura}
+    {\color{ubiBlue} \Huge \textbf{Projeto Final de Licenciatura}}
     
     \vspace{0.5cm}
     \LARGE
@@ -41,9 +93,8 @@
     \vspace{2.0cm}
     
     \textbf{Autor:}
-    \vspace{0.5cm}
+    \vspace{0.2cm}
     \Large
-
     Vasco Colaço nº52290 \\
     
     \vfill
@@ -53,18 +104,21 @@
     \textbf{Curso:} Licenciatura em Engenharia Informática
     
     \vspace{1.0cm}
-    
+    \hrule height 1pt % Linha horizontal decorativa
+    \vspace{0.5cm}
     \Large
     \today
     
 \end{titlepage}
 
-\tableofcontents
+% =================================================================
+% ÍNDICE
+% =================================================================
+{
+  \hypersetup{linkcolor=black} % Mantém o índice preto para ser mais legível
+  \tableofcontents
+}
 \newpage
-
-% =================================================================
-% CONTEÚDO DO RELATÓRIO (Baseado no tema IoT)
-% =================================================================
 
 % =================================================================
 % CONTEÚDO DO RELATÓRIO
@@ -78,7 +132,7 @@ Este capítulo descreve o processo de decisão para a escolha da arquitetura e d
 Durante a fase inicial de planeamento, foram consideradas duas hipóteses principais para a implementação do sistema de segurança:
 
 \begin{description}
-    \item[\textbf{1. Sistema em Dois Estágios (Cascata)}] \hfill \\
+    \item[\textcolor{ubiBlue}{1. Sistema em Dois Estágios (Cascata)}] \hfill \\
     Esta abordagem consiste numa arquitetura hierárquica:
     \begin{itemize}
         \item \textbf{Estágio 1 (Isolation Forest):} Atua como um filtro rápido de anomalias, separando o tráfego "Normal" do anómalo.
@@ -88,7 +142,7 @@ Durante a fase inicial de planeamento, foram consideradas duas hipóteses princi
 
     \vspace{0.5cm}
 
-    \item[\textbf{2. Algoritmo Multi-classe (Abordagem Escolhida)}] \hfill \\
+    \item[\textcolor{ubiBlue}{2. Algoritmo Multi-classe (Abordagem Escolhida)}] \hfill \\
     Utilizando um dataset rotulado de alta qualidade, é possível utilizar diretamente um classificador capaz de identificar múltiplos tipos de ataques num único passo.
     \begin{itemize}
         \item \textbf{Random Forest:} Robusto e fornece probabilidades por classe.
@@ -102,7 +156,7 @@ A decisão final recaiu sobre a \textbf{Opção 2: Algoritmo Multi-classe}, util
 \vspace{0.3cm}
 \noindent \textbf{Justificação da Escolha:}
 \begin{itemize}
-    \item \textbf{Disponibilidade de Dados:} A existência de datasets de alta qualidade, como o \textit{CIC IoT Dataset 2023} \cite{cic_iot_dataset} e o \textit{ToN\_IoT}, permite treinar modelos supervisionados com elevada eficácia.
+    \item \textbf{Disponibilidade de Dados:} A existência de datasets de alta qualidade, como o \textit{CIC IoT Dataset 2023} \cite{cic_iot_dataset} e o \textit{ToN\_IoT} \cite{ton_iot_dataset}, permite treinar modelos supervisionados com elevada eficácia.
     \item \textbf{Eficiência:} O LightGBM é reconhecido por ser leve e rápido, características críticas para o ambiente IoT.
     \item \textbf{Mitigação Precisa:} Para uma resposta automática eficaz, é fundamental saber a natureza do ataque (ex: distinguir um DDoS de uma Injeção SQL), algo que o Isolation Forest isoladamente não garante.
 \end{itemize}
@@ -128,7 +182,7 @@ Uma análise inicial à distribuição das classes revelou um desequilíbrio sev
     \centering
     \begin{tabular}{|l|c|c|}
         \hline
-        \textbf{Classe} & \textbf{Quantidade Original} & \textbf{Risco Identificado} \\
+        \textbf{\textcolor{ubiBlue}{Classe}} & \textbf{\textcolor{ubiBlue}{Quantidade Original}} & \textbf{\textcolor{ubiBlue}{Risco Identificado}} \\
         \hline
         DDoS & 677 271 & Classe Dominante \\
         Normal & 16 574 & Vulnerável a Falsos Positivos \\
@@ -145,29 +199,100 @@ Uma análise inicial à distribuição das classes revelou um desequilíbrio sev
 \subsubsection{Solução Adotada}
 Para mitigar este problema, limitou-se artificialmente o número de amostras da classe maioritária (DDoS) para \textbf{20 000 unidades}. Embora mantenha um rácio de cerca de 3:1 face à classe minoritária, este valor é perfeitamente gerível pelo LightGBM, evitando o desequilíbrio extremo de 100:1 original.
 
-\section{Implementação e Simulação}
+\section{Discussão no Processo de Treino e Teste do Modelo}
 
-\subsection{Simulação de Rede com GNS3}
-Para validar o modelo num ambiente realista, foi utilizado o emulador de redes gráfico GNS3. Esta ferramenta permitiu a criação de uma topologia de rede virtual que imita um cenário real de IoT, onde o tráfego gerado é analisado em tempo real.
+Ao testar o modelo treinado com o dataset inicial (\textit{CIC IoT Dataset}) e validá-lo com outro dataset encontrado na literatura, o \textit{TON\_IoT} \cite{ton_iot_dataset}, observou-se uma discrepância significativa. Os datasets representam ambientes distintos: o de treino reflete um ambiente doméstico, enquanto o de teste simula um ambiente industrial (IIoT).
 
-\subsection{Estratégias de Mitigação}
-O sistema não se limita à deteção passiva; a arquitetura proposta inclui respostas ativas baseadas no tipo de ataque identificado.
+Esta diferença de contexto pode levar a cenários onde o mesmo comportamento é classificado de forma oposta:
 
 \begin{description}
-    \item[Segmentação por VLANs] \hfill \\
-    Uma das principais medidas implementadas foi a utilização de VLANs (Virtual Local Area Networks). Esta técnica permite isolar dispositivos ou segmentos de rede comprometidos, impedindo que um ataque (como um Scanning lateral) se propague para infraestruturas críticas.
+    \item[\textcolor{ubiBlue}{Cenário A (Fábrica/IIoT):}] Um sensor de vibração envia 100 pacotes por segundo para o servidor. \\
+    \textbf{Veredito:} Normal. É um comportamento crítico para a monitorização de segurança da máquina.
     
-    \item[Router Inteligente] \hfill \\
-    O componente central atua como um "porteiro", intercetando o tráfego, extraindo características e consultando o modelo LightGBM para decidir instantaneamente se deve:
-    \begin{itemize}
-        \item Permitir o tráfego (Normal);
-        \item Bloquear a origem (DDoS);
-        \item Gerar um alerta de segurança (Scanning/Injection).
-    \end{itemize}
+    \item[\textcolor{ubiBlue}{Cenário B (Casa/IoT):}] Uma lâmpada inteligente envia 100 pacotes por segundo para o servidor. \\
+    \textbf{Veredito:} Ataque (DDoS/Flood). Uma lâmpada só deveria comunicar quando acionada.
 \end{description}
 
-\section{Conclusão}
-Este projeto demonstrou a viabilidade da utilização de algoritmos de Machine Learning leves, como o LightGBM, para a segurança de redes IoT. A abordagem multi-classe permitiu não só detetar intrusões, mas também classificar a sua natureza, possibilitando respostas de mitigação granulares e eficazes.
+Esta observação levanta a hipótese de que treinar um modelo com ambos os cenários poderia gerar falsos positivos. No entanto, existe um fator mitigante importante.
+
+\subsection{A Natureza Universal dos Ataques}
+
+O sistema proposto não visa apenas a deteção de anomalias genéricas (Anomaly Detection pura), mas sim a classificação de ataques específicos e conhecidos (DDoS, Injection, Scanning). Para estes ataques, as características matemáticas são extremas o suficiente para ignorar as subtilezas do contexto:
+
+\begin{itemize}
+    \item \textbf{DDoS:} Um ataque deste tipo não envia apenas 100 pacotes. Envia 100.000 ou 1 milhão. O volume é tão elevado que se torna anómalo tanto numa fábrica como numa casa.
+    \item \textbf{Scanning:} A tentativa de abrir 500 portas num segundo (Port Scan) é um comportamento malicioso em qualquer rede, industrial ou doméstica.
+    \item \textbf{Injection (SQL/XSS):} A presença de padrões como \texttt{' OR 1=1 --} num pacote é universalmente suspeita.
+\end{itemize}
+
+\subsection{Conclusão sobre a Generalização}
+Conclui-se que as características intrínsecas dos ataques se sobrepõem às diferenças entre o "normal doméstico" e o "normal industrial".
+
+Um modelo que funcione exclusivamente com os dados de treino originais (apenas CIC) estaria "viciado" (\textit{Overfitted}) ao ambiente de laboratório. Em contrapartida, um modelo híbrido, mesmo com o risco residual de confundir contextos, aproxima-se mais de um produto comercial real, capaz de operar em ambientes heterogéneos.
+
+\section{Diferença de Assertividade: Modelo com um Dataset vs Modelo Híbrido}
+
+Com o modelo treinado utilizando apenas o dataset \textit{Merged01.csv} (origem Doméstica/IoT) e testado com uma porção reservada desses mesmos dados, observou-se uma assertividade extremamente elevada. O modelo "aprendeu" perfeitamente as características desse ambiente específico.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{1_performance_domestica.png} 
+    \caption{Matriz de Confusão: Teste em ambiente doméstico (Alta Assertividade).}
+    \label{fig:matriz_alta}
+\end{figure}
+
+\noindent \textbf{Análise:} Como se pode observar na diagonal principal da Figura \ref{fig:matriz_alta}, a precisão é quase absoluta (acima de 99\% para ataques volumétricos). Destaca-se a capacidade do modelo em distinguir tráfego \textbf{DDoS} do tráfego \textbf{Normal} sem falhas. Os erros fora da diagonal são residuais, o que confirma que o modelo entrou num estado de \textit{Overfitting} ao ambiente doméstico: tornou-se um especialista naquele cenário específico.
+\paragraph{}
+No entanto, ao submeter esse mesmo modelo a um teste com um dataset de cariz industrial (\textit{TON\_IoT\_Train\_Test\_Network.csv}), o desempenho degradou-se significativamente. O modelo demonstrou sérias dificuldades em classificar corretamente as anomalias num contexto para o qual não foi treinado.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{2_performance_industrial.png} 
+    \caption{Matriz de Confusão: Teste em ambiente industrial (Baixa Assertividade).}
+    \label{fig:matriz_baixa}
+\end{figure}
+\noindent \textbf{Análise:} A degradação de performance é evidente na Figura \ref{fig:matriz_baixa}. O modelo falhou drasticamente na generalização. É particularmente crítico observar os valores fora da diagonal: uma grande quantidade de tráfego que era, na realidade, \textbf{Normal} (Industrial), foi incorretamente classificado como \textbf{Ataque}. Num cenário real, isto resultaria num número inaceitável de falsos alarmes, bloqueando operações legítimas da fábrica.
+\paragraph{}
+Após esta observação, decidiu-se treinar um novo modelo híbrido, com acesso a ambos os cenários (doméstico e industrial), visando uma generalização mais robusta.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{matriz_acertos.png} 
+    \caption{Matriz de Confusão: Teste após treino com os dois Datasets (Híbrido).}
+    \label{fig:matriz_hibrida}
+\end{figure}
+\noindent \textbf{Análise:} A Figura \ref{fig:matriz_hibrida} revela um fenómeno estatístico grave conhecido como "Eclipse de Dados". Observa-se que o modelo classifica de forma errada milhares de ataques de \textbf{Scanning} como sendo \textbf{Injection} (ver célula: Realidade Scanning / Previsão Injection).
+Isto acontece porque o dataset tem milhões de exemplos de DDoS e muito poucos de Scanning. O modelo, para minimizar o erro global, ignora as classes pequenas e "chuta" para a classe mais parecida (Injection), criando um viés inaceitável para um sistema de segurança.
+
+\subsection{Análise do Enviesamento Inicial (O Problema da Classe Maioritária)}
+
+A análise detalhada da Matriz de Confusão inicial revelou um erro sistemático: o modelo confundia frequentemente ataques de \textbf{Scanning} com \textbf{Injection}. Este comportamento não se devia a uma falha na "inteligência" do algoritmo, mas sim a um fenómeno estatístico conhecido como Desequilíbrio de Classes.
+
+Este erro pode ser explicado por três fatores principais:
+
+\begin{description}
+    \item[O Efeito de Volume:] O dataset original continha uma quantidade massiva de tráfego DDoS (centenas de milhares de exemplos) e uma quantidade muito reduzida de Scanning. Para o modelo, o DDoS era o sinal dominante ("grito"), enquanto o Scanning era apenas ruído ("sussurro"). O algoritmo focou-se em maximizar a acurácia global aprendendo o padrão dominante.
+    
+    \item[A Semelhança Estatística:] Tanto o Scanning como o Injection partilham características matemáticas semelhantes (eventos rápidos, poucos pacotes, durações curtas), contrastando com o volume massivo do DDoS ou a regularidade do tráfego Normal. Na dúvida, o modelo optava pela classe "vizinha" com maior peso estatístico.
+    
+    \item[A "Preguiça" Matemática:] Os algoritmos de Machine Learning minimizam o erro total. Se 95\% dos dados são DDoS e Normal, o modelo pode "ignorar" os erros nas classes pequenas (Scanning) e manter uma acurácia aparente de 95\%. O modelo estava "viciado" nas classes maioritárias.
+\end{description}
+
+\textbf{Conclusão:} O enviesamento observado não foi um erro de deteção (o ataque não foi classificado como Normal), mas sim um erro de classificação específica (troca de tipo de ataque), causado pela falta de representatividade da amostra de Scanning.
+
+\subsection{Implementação da Solução: Class Weight Balanced}
+
+Para corrigir a tendência do modelo de ignorar os ataques menos frequentes, optou-se por uma estratégia de ajuste de "atenção" em vez de criar dados artificiais.
+
+Foi ativado o parâmetro \texttt{class\_weight='balanced'} no algoritmo LightGBM. Esta técnica altera fundamentalmente as regras de pontuação durante o treino: ensina ao modelo que errar um ataque raro (como Scanning) é muito mais grave do que errar um ataque comum. Desta forma, o algoritmo é forçado a atribuir a mesma importância a todas as classes, independentemente da sua representatividade numérica no dataset.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{matriz_acertos_equilibrado.png} 
+    \caption{Matriz de Confusão: Teste após aplicação de Pesos Equilibrados.}
+    \label{fig:matriz_equilibrada}
+\end{figure}
+\noindent \textbf{Análise Final:} Com o equilíbrio de classes (Figura \ref{fig:matriz_equilibrada}), observa-se a recuperação da robustez. O erro crítico entre \textit{Scanning} e \textit{Injection} foi drasticamente reduzido (de milhares de erros para valores residuais). O modelo deixou de ser um "especialista doméstico" para se tornar um "generalista de segurança", capaz de identificar corretamente todos os vetores de ataque em ambientes heterogéneos, validando assim a arquitetura proposta.
 
 % =================================================================
 % BIBLIOGRAFIA
@@ -184,6 +309,12 @@ Disponível em: \url{http://cicresearch.ca/IOTDataset/CIC_IOT_Dataset2023/Datase
 CIC Research,
 \textit{Merged Dataset CSV (Merged01.csv)},
 Disponível em: \url{http://cicresearch.ca/IOTDataset/CIC_IOT_Dataset2023/Dataset/CSV/MERGED_CSV/Merged01.csv}.
+
+\bibitem{ton_iot_dataset}
+F. Abu Zwayed,
+\textit{ToN\_IoT Train Test Network Dataset},
+Kaggle,
+Disponível em: \url{https://www.kaggle.com/datasets/fadiabuzwayed/ton-iot-train-test-network}.
 
 \end{thebibliography}
 
