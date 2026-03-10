@@ -1,0 +1,6 @@
+pedir a ia para fazer das duas maneiras. ia a detetar tcp udp logo e python com o resto e meter ia a meter so DDos e o phyton trata do tipo (tcp udp) para que o relatorio fique completo
+dados nos graficos por classes de anomalias
+testar com o datasets diferenets do mesmo tipo
+retirar :    if 'WEB' in label: return 'Web-Attack'
+do dataset
+outro modelo sem ser de base de arvores
