@@ -4,61 +4,40 @@ from sklearn.ensemble import RandomForestClassifier
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import LabelEncoder
 import joblib
-import gc # Garbage Collector para libertar RAM
 
 # --- CONFIGURAÇÃO ---
-caminho_dataset1 = '../../datasets/Merged01.csv' 
-caminho_dataset2 = '../../datasets/Merged02.csv' 
+# 1. MUDANÇA: Usar apenas o dataset reduzido e balanceado!
+caminho_dataset = '../../datasets/dataset_treino_balanceado_10k.csv' 
 
-print("A INICIAR SISTEMA DE TREINO DE CIBERSEGURANÇA (RANDOM FOREST)...")
-print("1. A carregar datasets CICIoT2023 (isto pode demorar)...")
+print("🚀 A INICIAR SISTEMA DE TREINO DE CIBERSEGURANÇA (RANDOM FOREST PURO)...")
+print("1. A carregar dataset balanceado (vai ser super rápido!)...")
 
 try:
-    df1 = pd.read_csv(caminho_dataset1, low_memory=False)
-    df2 = pd.read_csv(caminho_dataset2, low_memory=False)
-    
-    print("   -> A fundir os ficheiros...")
-    df = pd.concat([df1, df2], ignore_index=True)
-    
-    del df1, df2
-    gc.collect()
-    
-    print(f"Dados carregados! pacotes analisados: {len(df)}")
-
+    df = pd.read_csv(caminho_dataset, low_memory=False)
+    print(f"✅ Dados carregados! Pacotes analisados: {len(df)}")
 except FileNotFoundError:
-    print("ERRO: Não encontrei os ficheiros csv.")
-    print("Verifica se o caminho '../../datasets/Merged01.csv' está correto.")
+    print("❌ ERRO: Não encontrei o ficheiro csv.")
+    print(f"Verifica se o caminho '{caminho_dataset}' está correto.")
     exit()
 
-# --- 2. ENGENHARIA DE FEATURES (AGRUPAMENTO POR MITIGAÇÃO) ---
-print("2. A aplicar Lógica de Mitigação Inteligente...")
+# --- 2. ENGENHARIA DE FEATURES ---
+print("2. A organizar labels...")
 
-def categorizar_ataque_mitigacao(label):
-    label = str(label)
-    
-    if label == 'BENIGNTRAFFIC': return 'Normal'
-    
-    if 'DDOS' in label:
-        if 'TCP' in label or 'SYN' in label or 'HTTP' in label:
-            return 'DDOS-TCP'
-        else:
-            return 'DDOS-UDP/ICMP'
-            
-    if 'DOS' in label:
-        if 'TCP' in label or 'SYN' in label or 'HTTP' in label:
-            return 'DoS-TCP'
-        else:
-            return 'DoS-UDP/ICMP'
+# Se a coluna 'categoria' por acaso não estiver no CSV, nós recriamo-la para segurança
+if 'categoria' not in df.columns:
+    def categorizar_ataque_mitigacao(label):
+        label = str(label).strip().upper() 
+        if label == 'BENIGNTRAFFIC': return 'Normal'
+        if 'DDOS' in label: return 'DDoS-TCP' if ('TCP' in label or 'SYN' in label or 'HTTP' in label) else 'DDoS-UDP/ICMP'
+        if 'DOS' in label: return 'DoS-TCP' if ('TCP' in label or 'SYN' in label or 'HTTP' in label) else 'DoS-UDP/ICMP'
+        if 'MIRAI' in label: return 'Mirai-Botnet'
+        if 'BRUTE' in label: return 'BruteForce'
+        if 'SPOOFING' in label: return 'Spoofing'
+        if 'RECON' in label: return 'Recon'
+        # if 'WEB' in label: return 'Web-Attack'
+        return 'Outros'
 
-    if 'MIRAI' in label: return 'Mirai-Botnet'
-    if 'BRUTE' in label: return 'BruteForce'
-    if 'SPOOFING' in label: return 'Spoofing'
-    if 'RECON' in label: return 'Recon'
-    if 'WEB' in label: return 'Web-Attack'
-    
-    return 'Outros'
-
-df['categoria'] = df['Label'].apply(categorizar_ataque_mitigacao)
+    df['categoria'] = df['Label'].apply(categorizar_ataque_mitigacao)
 
 print("   -> Distribuição das Categorias de Ataque:")
 print(df['categoria'].value_counts())
@@ -72,7 +51,8 @@ df['label_encoded'] = le.fit_transform(df['categoria'])
 joblib.dump(le, 'label_encoder_categorias_rf.pkl')
 
 y = df['label_encoded']
-X = df.drop(['Label', 'label_encoded', 'categoria'], axis=1)
+# Deitamos fora as colunas de texto (Label e categoria) para o modelo funcionar com matemática
+X = df.drop(['Label', 'label_encoded', 'categoria'], axis=1, errors='ignore')
 
 # --- FILTRO DE PUREZA UNIVERSAL ---
 print("   -> A limpar valores infinitos ou gigantes (Filtro Numpy)...")
@@ -83,13 +63,12 @@ X.fillna(0, inplace=True)
 print("4. A dividir Treino (80%) / Teste (20%)...")
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
 
-print("5. A treinar o Modelo Random Forest (Multi-Classe)...")
-# Mudamos de Regressor (números) para Classifier (categorias)
-# O parâmetro n_jobs=-1 é crucial aqui para usar todos os núcleos do CPU
-modelo = RandomForestClassifier(n_estimators=100, random_state=42, n_jobs=-1, class_weight='balanced')
+print("5. A treinar o Modelo Random Forest (Multi-Classe, Naturalmente Balanceado)...")
+# 2. MUDANÇA: O parâmetro class_weight='balanced' foi removido!
+modelo = RandomForestClassifier(n_estimators=100, random_state=42, n_jobs=-1)
 modelo.fit(X_train, y_train)
 
 # --- 5. GUARDAR ---
 print("6. A guardar o cérebro da IA...")
 joblib.dump(modelo, 'modelo_ciberseguranca_rf.pkl')
-print("Ficheiro 'modelo_ciberseguranca_rf.pkl' guardado com sucesso.")
+print("✅ Ficheiro 'modelo_ciberseguranca_rf.pkl' guardado com sucesso.")

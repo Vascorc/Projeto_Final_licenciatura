@@ -1,8 +1,7 @@
-analise_network/datasets/*
+analise_network/datasets/Merged05.csv
+analise_network/datasets/Merged06.csv
 analise_rodoviaria/datasets/*
-analise_network/modelos/LightGBM/modelo_ciberseguranca_LGBM.pkl
 analise_network/modelos/Random Forest/modelo_ciberseguranca_rf.pkl
-analise_network/modelos/XGBoost/modelo_ciberseguranca_xgb.pkl
 analise_rodoviaria/modelos/LightGBM/modelo_peoes_lgbm.pkl
 analise_rodoviaria/modelos/Random Forest/modelo_peoes_rf.pkl
 analise_rodoviaria/modelos/Regressão Linear/modelo_peoes_lr.pkl
