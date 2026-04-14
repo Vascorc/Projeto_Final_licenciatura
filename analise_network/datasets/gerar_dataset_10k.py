@@ -4,12 +4,12 @@ import gc
 # --- CONFIGURAÇÃO ---
 # Agora vamos ler 4 ficheiros! (Certifica-te que já os descarregaste)
 ficheiros = [
-    './Merged01.csv',
-    './Merged02.csv',
-    './Merged03.csv',
-    './Merged04.csv'
+    './Merged07.csv',
+    './Merged08.csv',
+    './Merged09.csv',
+    './Merged10.csv'
 ]
-caminho_saida = './dataset_treino_balanceado_10k.csv'
+caminho_saida = './dataset_ataque.csv'
 LIMITE_POR_CLASSE = 10000
 
 print("⚙️ A INICIAR O MOTOR DE EXTRACÇÃO MULTI-VOLUME...")
