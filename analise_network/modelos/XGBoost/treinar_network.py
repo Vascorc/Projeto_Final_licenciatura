@@ -27,9 +27,17 @@ except FileNotFoundError:
 
 # --- 2. ENGENHARIA DE FEATURES ---
 print("2. A organizar labels...")
-if 'categoria' not in df.columns:
-    print("ERRO: O dataset não tem a coluna 'categoria'.")
-    exit()
+def categorizar_ataque_mitigacao(label):
+    label = str(label).strip().upper() 
+    if label == 'BENIGNTRAFFIC' or label == 'BENIGN': return 'Normal'
+    if 'DDOS' in label: return 'DDoS-TCP' if ('TCP' in label or 'SYN' in label or 'HTTP' in label) else 'DDoS-UDP/ICMP'
+    if 'DOS' in label: return 'DoS-TCP' if ('TCP' in label or 'SYN' in label or 'HTTP' in label) else 'DoS-UDP/ICMP'
+    if 'MIRAI' in label: return 'Mirai-Botnet'
+    if 'BRUTE' in label: return 'BruteForce'
+    if 'SPOOFING' in label: return 'Spoofing'
+    if 'RECON' in label: return 'Recon'
+    return 'Outros'
+df['categoria'] = df['Label'].apply(categorizar_ataque_mitigacao)
 
 print("3. A preparar dados para o XGBoost...")
 

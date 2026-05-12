@@ -26,19 +26,18 @@ print("2. A organizar labels...")
 
 # Como o nosso script de extração já criou a coluna 'categoria', 
 # usamos este 'if' para evitar refazer o trabalho (poupa tempo!)
-if 'categoria' not in df.columns:
-    def categorizar_ataque_mitigacao(label):
-        label = str(label).strip().upper() 
-        if label == 'BENIGNTRAFFIC': return 'Normal'
-        if 'DDOS' in label: return 'DDoS-TCP' if ('TCP' in label or 'SYN' in label or 'HTTP' in label) else 'DDoS-UDP/ICMP'
-        if 'DOS' in label: return 'DoS-TCP' if ('TCP' in label or 'SYN' in label or 'HTTP' in label) else 'DoS-UDP/ICMP'
-        if 'MIRAI' in label: return 'Mirai-Botnet'
-        if 'BRUTE' in label: return 'BruteForce'
-        if 'SPOOFING' in label: return 'Spoofing'
-        if 'RECON' in label: return 'Recon'
-        # if 'WEB' in label: return 'Web-Attack'
-        return 'Outros'
-    df['categoria'] = df['Label'].apply(categorizar_ataque_mitigacao)
+def categorizar_ataque_mitigacao(label):
+    label = str(label).strip().upper() 
+    if label == 'BENIGNTRAFFIC' or label == 'BENIGN': return 'Normal'
+    if 'DDOS' in label: return 'DDoS-TCP' if ('TCP' in label or 'SYN' in label or 'HTTP' in label) else 'DDoS-UDP/ICMP'
+    if 'DOS' in label: return 'DoS-TCP' if ('TCP' in label or 'SYN' in label or 'HTTP' in label) else 'DoS-UDP/ICMP'
+    if 'MIRAI' in label: return 'Mirai-Botnet'
+    if 'BRUTE' in label: return 'BruteForce'
+    if 'SPOOFING' in label: return 'Spoofing'
+    if 'RECON' in label: return 'Recon'
+    # if 'WEB' in label: return 'Web-Attack'
+    return 'Outros'
+df['categoria'] = df['Label'].apply(categorizar_ataque_mitigacao)
 
 print("3. A preparar dados para o LightGBM...")
 

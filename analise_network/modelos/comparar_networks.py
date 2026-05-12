@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 from sklearn.metrics import accuracy_score, f1_score, classification_report
 import gc
 
-# --- 1. CARREGAR OS DADOS DO "MUNDO REAL" ---
+# CARREGAR OS DADOS DO "MUNDO REAL" 
 print("🚀 A iniciar a Avaliação Zero-Day (Teste Cego)...")
 print("1. A carregar ficheiros Merged05 e Merged06...")
 
@@ -20,7 +20,7 @@ except FileNotFoundError:
     print("❌ ERRO: Ficheiros Merged05 ou Merged06 não encontrados.")
     exit()
 
-# --- 2. ENGENHARIA DE FEATURES ---
+# ENGENHARIA DE FEATURES
 print("2. A aplicar a Lógica de Mitigação do Edge Router...")
 
 def categorizar_ataque_mitigacao(label):
@@ -38,7 +38,7 @@ def categorizar_ataque_mitigacao(label):
 df['categoria'] = df['Label'].apply(categorizar_ataque_mitigacao)
 
 print("3. A traduzir as categorias com o Dicionário Original...")
-# ⚠️ MUITO IMPORTANTE: Usamos o transform() e NÃO o fit_transform(), 
+# MUITO IMPORTANTE: Usamos o transform() e NÃO o fit_transform(), 
 # para garantir que as categorias têm o mesmo número do dia do treino!
 le = joblib.load('./XGBoost/label_encoder_categorias_xgb.pkl') # Podes apontar para qualquer um dos teus encoders
 df['label_encoded'] = le.transform(df['categoria'])
@@ -59,10 +59,10 @@ modelos = {
     'LightGBM': joblib.load('./LightGBM/modelo_ciberseguranca_lgbm.pkl'), 
     'Random Forest': joblib.load('./Random Forest/modelo_ciberseguranca_rf.pkl'),
     'XGBoost': joblib.load('./XGBoost/modelo_ciberseguranca_xgb.pkl'),
-    'Rede Neuronal (MLP)': joblib.load('./Multi-Layer Perceptron/modelo_ciberseguranca_mlp.pkl')
+    'Rede Neuronal (MLP)': joblib.load('./Multi-Layer_Perceptron/modelo_ciberseguranca_mlp.pkl')
 }
 
-scaler_mlp = joblib.load('./Multi-Layer Perceptron/scaler_ciberseguranca_mlp.pkl')
+scaler_mlp = joblib.load('./Multi-Layer_Perceptron/scaler_ciberseguranca_mlp.pkl')
 
 resultados_acc = []
 resultados_f1 = []
@@ -70,10 +70,10 @@ nomes_modelos = list(modelos.keys())
 acertos_por_anomalia = {classe: [] for classe in nomes_das_classes}
 
 # --- 4. O BOMBARDEAMENTO DE TESTES ---
-print("\n📊 INÍCIO DO TESTE DE ESFORÇO (RESULTADOS POR ANOMALIA):\n" + "="*50)
+print("\n INÍCIO DO TESTE DE ESFORÇO (RESULTADOS POR ANOMALIA):\n" + "="*50)
 
 for nome_modelo, modelo in modelos.items():
-    print(f"\n🛡️ A disparar contra o {nome_modelo}...")
+    print(f"\n A disparar contra o {nome_modelo}...")
     
     # O Truque do MLP
     if nome_modelo == 'Rede Neuronal (MLP)':
@@ -100,7 +100,7 @@ for nome_modelo, modelo in modelos.items():
 
 print("\n" + "="*50)
 
-# --- 5. GERAR GRÁFICOS ---
+# GERAR GRÁFICOS
 print("5. A revelar as fotografias finais do Teste Zero-Day...")
 plt.style.use('seaborn-v0_8-whitegrid')
 cores = ['#3498DB', '#2ECC71', '#E67E22', '#9B59B6'] 
@@ -147,4 +147,4 @@ ax3.axhline(y=90, color='red', linestyle='--', alpha=0.5, label='Meta 90%')
 plt.tight_layout()
 plt.savefig('grafico_teste_cego_anomalias.png', dpi=300, bbox_inches='tight')
 
-print("✅ Gráficos do Teste Cego gerados com sucesso!")
+print("-----------------Gráficos do Teste Cego gerados com sucesso!-----------------")

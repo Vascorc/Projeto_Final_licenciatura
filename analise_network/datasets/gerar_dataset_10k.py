@@ -9,8 +9,8 @@ ficheiros = [
     './Merged09.csv',
     './Merged10.csv'
 ]
-caminho_saida = './dataset_ataque.csv'
-LIMITE_POR_CLASSE = 10000
+caminho_saida = './dataset_ataque_pequeno.csv'
+LIMITE_POR_CLASSE = 10
 
 print("⚙️ A INICIAR O MOTOR DE EXTRACÇÃO MULTI-VOLUME...")
 
@@ -41,7 +41,7 @@ print(f"✅ Total do 'Oceano' de Dados: {total_pacotes} pacotes.")
 print("2. A organizar os pacotes pelas categorias do Edge Router...")
 def categorizar_ataque_mitigacao(label):
     label = str(label).strip().upper() 
-    if label == 'BENIGNTRAFFIC': return 'Normal'
+    if label == 'BENIGNTRAFFIC' or label == 'BENIGN': return 'Normal'
     if 'DDOS' in label: return 'DDoS-TCP' if ('TCP' in label or 'SYN' in label or 'HTTP' in label) else 'DDoS-UDP/ICMP'
     if 'DOS' in label: return 'DoS-TCP' if ('TCP' in label or 'SYN' in label or 'HTTP' in label) else 'DoS-UDP/ICMP'
     if 'MIRAI' in label: return 'Mirai-Botnet'
