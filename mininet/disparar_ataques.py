@@ -6,7 +6,7 @@ import time
 IP_ALVO = "10.0.0.2" # IP do host h2 no Mininet
 PORTA = 5005
 # AJUSTADO: Nome exato do teu ficheiro
-FICHEIRO_CSV = "./analise_network/datasets/dataset_ataque_pequeno.csv" 
+FICHEIRO_CSV = "../analise_network/datasets/dataset_ataque_pequeno.csv" 
 
 sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 print(f"Simulação: Enviando dados de '{FICHEIRO_CSV}' para {IP_ALVO}...")

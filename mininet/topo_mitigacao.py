@@ -13,9 +13,9 @@ def meuProjetoTopo():
 
     info( '*** Adicionando os hosts\n' )
     # h1 é o atacante
-    h1 = net.addHost( 'h1', ip='10.0.0.1' )
+    h1 = net.addHost( 'Atacante', ip='10.0.0.1' )
     # h2 é o servidor/defesa
-    h2 = net.addHost( 'h2', ip='10.0.0.2' )
+    h2 = net.addHost( 'Defensor', ip='10.0.0.2' )
 
     info( '*** Adicionando o switch\n' )
     s1 = net.addSwitch( 's1', failMode='standalone' )

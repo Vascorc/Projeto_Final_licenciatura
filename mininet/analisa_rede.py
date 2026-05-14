@@ -10,8 +10,8 @@ from scapy.all import sniff, IP
 print("-----------A iniciar Sistema de Mitigação no Edge------------")
 
 # Caminhos 
-CAMINHO_MODELO = './analise_network/modelos/XGBoost/modelo_ciberseguranca_xgb.pkl'
-CAMINHO_ENCODER = './analise_network/modelos/XGBoost/label_encoder_categorias_xgb.pkl'
+CAMINHO_MODELO = '../analise_network/modelos/XGBoost/modelo_ciberseguranca_xgb.pkl'
+CAMINHO_ENCODER = '../analise_network/modelos/XGBoost/label_encoder_categorias_xgb.pkl'
 
 try:
     modelo = joblib.load(CAMINHO_MODELO)
@@ -50,8 +50,8 @@ except Exception as e:
 
 # FUNÇÃO DE EXECUÇÃO DE FIREWALL E LOGS 
 def executar_comando(comando):
-    # os.system(comando) # comentado apenas para simulação, em caso real a execucao do comando é realizada
-    pass
+    os.system(comando)
+    # pass
 
 def registar_log_csv(ip_origem, classe, acao, tempo_ms):
     ficheiro = "./dados_apos_ataque/historico_testes_modelos.csv"
@@ -144,6 +144,6 @@ print("\nATIVADO: A ouvir a rede...")
 try:
     # Este comando fica a ouvir todas as interfaces e chama a função 'capturar_pacote' para cada IP que vir
     # Adicionado iface="eth0" pois no Mininet os hosts comunicam pela eth0
-    sniff(iface="eth0", prn=capturar_pacote, store=0)
+    sniff(iface="Defensor-eth0", prn=capturar_pacote, store=0)
 except KeyboardInterrupt:
     print("\n Monitorização parada.")

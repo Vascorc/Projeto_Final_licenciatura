@@ -1,401 +1,401 @@
 DataHora,Modelo_IA,IP_Origem,Classe_Detetada,Acao_Tomada,Tempo_Resposta_ms
-2026-05-12 18:40:16.049,LightGBM,127.0.0.1,Recon,Bloqueado,6.5334
-2026-05-12 18:40:17.045,LightGBM,127.0.0.1,Mirai-Botnet,Bloqueado,5.153
-2026-05-12 18:40:18.045,LightGBM,127.0.0.1,Recon,Bloqueado,4.1038
-2026-05-12 18:40:19.047,LightGBM,127.0.0.1,DoS-UDP/ICMP,Bloqueado,3.6479
-2026-05-12 18:40:20.048,LightGBM,127.0.0.1,DoS-UDP/ICMP,Bloqueado,4.0747
-2026-05-12 18:40:21.052,LightGBM,127.0.0.1,DoS-TCP,Bloqueado,4.9193
-2026-05-12 18:40:22.049,LightGBM,127.0.0.1,DDoS-UDP/ICMP,Bloqueado,2.4444
-2026-05-12 18:40:23.053,LightGBM,127.0.0.1,Recon,Bloqueado,4.2784
-2026-05-12 18:40:24.053,LightGBM,127.0.0.1,DoS-TCP,Bloqueado,3.443
-2026-05-12 18:40:25.068,LightGBM,127.0.0.1,BruteForce,Bloqueado,4.167
-2026-05-12 18:40:26.058,LightGBM,127.0.0.1,DDoS-TCP,Bloqueado,2.998
-2026-05-12 18:40:27.059,LightGBM,127.0.0.1,DoS-TCP,Bloqueado,2.4723
-2026-05-12 18:40:28.061,LightGBM,127.0.0.1,Normal,Permitido,3.6263
-2026-05-12 18:40:29.063,LightGBM,127.0.0.1,DoS-TCP,Bloqueado,3.4244
-2026-05-12 18:40:30.065,LightGBM,127.0.0.1,Spoofing,Bloqueado,3.6018
-2026-05-12 18:40:31.066,LightGBM,127.0.0.1,Spoofing,Bloqueado,3.3376
-2026-05-12 18:40:32.070,LightGBM,127.0.0.1,Recon,Bloqueado,2.9608
-2026-05-12 18:40:33.078,LightGBM,127.0.0.1,Outros,Bloqueado,4.546
-2026-05-12 18:40:34.078,LightGBM,127.0.0.1,DDoS-TCP,Bloqueado,3.4524
-2026-05-12 18:40:35.079,LightGBM,127.0.0.1,DDoS-TCP,Bloqueado,3.3035
-2026-05-12 18:40:36.082,LightGBM,127.0.0.1,Mirai-Botnet,Bloqueado,3.9893
-2026-05-12 18:40:37.084,LightGBM,127.0.0.1,Recon,Bloqueado,4.7402
-2026-05-12 18:40:38.084,LightGBM,127.0.0.1,DDoS-UDP/ICMP,Bloqueado,3.6092
-2026-05-12 18:40:39.087,LightGBM,127.0.0.1,DoS-UDP/ICMP,Bloqueado,4.8562
-2026-05-12 18:40:40.087,LightGBM,127.0.0.1,Normal,Permitido,4.003
-2026-05-12 18:40:41.089,LightGBM,127.0.0.1,DDoS-TCP,Bloqueado,4.719
-2026-05-12 18:40:42.090,LightGBM,127.0.0.1,DoS-UDP/ICMP,Bloqueado,3.8053
-2026-05-12 18:40:43.088,LightGBM,127.0.0.1,Spoofing,Bloqueado,2.4359
-2026-05-12 18:40:44.094,LightGBM,127.0.0.1,BruteForce,Bloqueado,4.8155
-2026-05-12 18:40:45.094,LightGBM,127.0.0.1,Outros,Bloqueado,4.5295
-2026-05-12 18:40:46.097,LightGBM,127.0.0.1,DDoS-TCP,Bloqueado,4.9981
-2026-05-12 18:40:47.100,LightGBM,127.0.0.1,DoS-UDP/ICMP,Bloqueado,6.196
-2026-05-12 18:40:48.097,LightGBM,127.0.0.1,Recon,Bloqueado,3.2316
-2026-05-12 18:40:49.100,LightGBM,127.0.0.1,DDoS-UDP/ICMP,Bloqueado,3.672
-2026-05-12 18:40:50.103,LightGBM,127.0.0.1,Recon,Bloqueado,4.0672
-2026-05-12 18:40:51.142,LightGBM,127.0.0.1,Recon,Bloqueado,17.6407
-2026-05-12 18:40:52.110,LightGBM,127.0.0.1,Normal,Permitido,6.2291
-2026-05-12 18:40:53.106,LightGBM,127.0.0.1,Normal,Permitido,3.7517
-2026-05-12 18:40:54.109,LightGBM,127.0.0.1,DoS-TCP,Bloqueado,3.7551
-2026-05-12 18:40:55.109,LightGBM,127.0.0.1,DDoS-TCP,Bloqueado,3.859
-2026-05-12 18:40:56.110,LightGBM,127.0.0.1,DDoS-UDP/ICMP,Bloqueado,3.8655
-2026-05-12 18:40:57.112,LightGBM,127.0.0.1,DoS-TCP,Bloqueado,4.3148
-2026-05-12 18:40:58.116,LightGBM,127.0.0.1,BruteForce,Bloqueado,4.8385
-2026-05-12 18:40:59.115,LightGBM,127.0.0.1,Spoofing,Bloqueado,4.6908
-2026-05-12 18:41:00.115,LightGBM,127.0.0.1,DDoS-UDP/ICMP,Bloqueado,4.0394
-2026-05-12 18:41:01.119,LightGBM,127.0.0.1,DDoS-TCP,Bloqueado,5.6932
-2026-05-12 18:41:02.120,LightGBM,127.0.0.1,Recon,Bloqueado,4.8465
-2026-05-12 18:41:03.119,LightGBM,127.0.0.1,DoS-UDP/ICMP,Bloqueado,3.9107
-2026-05-12 18:41:04.122,LightGBM,127.0.0.1,Normal,Permitido,4.9581
-2026-05-12 18:41:05.123,LightGBM,127.0.0.1,DoS-TCP,Bloqueado,4.0517
-2026-05-12 18:41:06.124,LightGBM,127.0.0.1,DoS-UDP/ICMP,Bloqueado,4.4231
-2026-05-12 18:41:07.125,LightGBM,127.0.0.1,BruteForce,Bloqueado,5.0171
-2026-05-12 18:41:08.131,LightGBM,127.0.0.1,DDoS-TCP,Bloqueado,5.9064
-2026-05-12 18:41:09.128,LightGBM,127.0.0.1,DDoS-TCP,Bloqueado,5.1959
-2026-05-12 18:41:10.132,LightGBM,127.0.0.1,Recon,Bloqueado,5.0435
-2026-05-12 18:41:11.140,LightGBM,127.0.0.1,Normal,Permitido,4.3124
-2026-05-12 18:41:12.135,LightGBM,127.0.0.1,Normal,Permitido,4.6561
-2026-05-12 18:41:13.143,LightGBM,127.0.0.1,Normal,Permitido,7.5024
-2026-05-12 18:41:14.136,LightGBM,127.0.0.1,DoS-TCP,Bloqueado,3.6648
-2026-05-12 18:41:15.171,LightGBM,127.0.0.1,Recon,Bloqueado,4.9381
-2026-05-12 18:41:16.140,LightGBM,127.0.0.1,Mirai-Botnet,Bloqueado,4.3951
-2026-05-12 18:41:17.141,LightGBM,127.0.0.1,Spoofing,Bloqueado,4.5179
-2026-05-12 18:41:18.142,LightGBM,127.0.0.1,Mirai-Botnet,Bloqueado,4.1527
-2026-05-12 18:41:19.143,LightGBM,127.0.0.1,DoS-UDP/ICMP,Bloqueado,4.3526
-2026-05-12 18:41:20.145,LightGBM,127.0.0.1,Mirai-Botnet,Bloqueado,4.2286
-2026-05-12 18:41:21.147,LightGBM,127.0.0.1,Normal,Permitido,4.7611
-2026-05-12 18:41:22.149,LightGBM,127.0.0.1,DoS-UDP/ICMP,Bloqueado,5.9033
-2026-05-12 18:41:23.148,LightGBM,127.0.0.1,Normal,Permitido,3.9746
-2026-05-12 18:41:24.150,LightGBM,127.0.0.1,Normal,Permitido,4.3517
-2026-05-12 18:41:25.151,LightGBM,127.0.0.1,Recon,Bloqueado,3.9168
-2026-05-12 18:41:26.152,LightGBM,127.0.0.1,Spoofing,Bloqueado,4.5856
-2026-05-12 18:41:27.154,LightGBM,127.0.0.1,DoS-TCP,Bloqueado,4.0031
-2026-05-12 18:41:28.156,LightGBM,127.0.0.1,Mirai-Botnet,Bloqueado,3.8368
-2026-05-12 18:41:29.157,LightGBM,127.0.0.1,DoS-UDP/ICMP,Bloqueado,4.0549
-2026-05-12 18:41:30.161,LightGBM,127.0.0.1,Spoofing,Bloqueado,4.7565
-2026-05-12 18:41:31.161,LightGBM,127.0.0.1,Mirai-Botnet,Bloqueado,4.24
-2026-05-12 18:41:32.162,LightGBM,127.0.0.1,Recon,Bloqueado,4.198
-2026-05-12 18:41:33.161,LightGBM,127.0.0.1,DoS-TCP,Bloqueado,3.0485
-2026-05-12 18:41:34.166,LightGBM,127.0.0.1,Spoofing,Bloqueado,6.3584
-2026-05-12 18:41:35.181,LightGBM,127.0.0.1,Mirai-Botnet,Bloqueado,3.0851
-2026-05-12 18:41:36.188,LightGBM,127.0.0.1,Normal,Permitido,4.9029
-2026-05-12 18:41:37.188,LightGBM,127.0.0.1,Recon,Bloqueado,4.136
-2026-05-12 18:41:38.191,LightGBM,127.0.0.1,DoS-TCP,Bloqueado,4.6226
-2026-05-12 18:41:39.191,LightGBM,127.0.0.1,DDoS-UDP/ICMP,Bloqueado,4.9148
-2026-05-12 18:41:40.191,LightGBM,127.0.0.1,Recon,Bloqueado,4.0746
-2026-05-12 18:41:41.193,LightGBM,127.0.0.1,Mirai-Botnet,Bloqueado,4.6098
-2026-05-12 18:41:42.193,LightGBM,127.0.0.1,DDoS-UDP/ICMP,Bloqueado,3.4228
-2026-05-12 18:41:43.196,LightGBM,127.0.0.1,BruteForce,Bloqueado,4.0462
-2026-05-12 18:41:44.196,LightGBM,127.0.0.1,DDoS-UDP/ICMP,Bloqueado,4.2286
-2026-05-12 18:41:45.197,LightGBM,127.0.0.1,Recon,Bloqueado,4.0375
-2026-05-12 18:41:46.199,LightGBM,127.0.0.1,Spoofing,Bloqueado,4.3079
-2026-05-12 18:41:47.196,LightGBM,127.0.0.1,Recon,Bloqueado,2.2844
-2026-05-12 18:41:48.202,LightGBM,127.0.0.1,Recon,Bloqueado,5.4655
-2026-05-12 18:41:49.202,LightGBM,127.0.0.1,Recon,Bloqueado,4.2688
-2026-05-12 18:41:50.205,LightGBM,127.0.0.1,DDoS-UDP/ICMP,Bloqueado,5.9317
-2026-05-12 18:41:51.204,LightGBM,127.0.0.1,Normal,Permitido,3.938
-2026-05-12 18:41:52.208,LightGBM,127.0.0.1,Spoofing,Bloqueado,4.854
-2026-05-12 18:41:53.208,LightGBM,127.0.0.1,DDoS-TCP,Bloqueado,4.4614
-2026-05-12 18:41:54.208,LightGBM,127.0.0.1,Spoofing,Bloqueado,3.8002
-2026-05-12 18:41:55.209,LightGBM,127.0.0.1,Mirai-Botnet,Bloqueado,3.7213
-2026-05-12 19:06:56.823,Multi-Layer_Perceptron,127.0.0.1,Recon,Bloqueado,8.3126
-2026-05-12 19:06:57.821,Multi-Layer_Perceptron,127.0.0.1,Mirai-Botnet,Bloqueado,3.3155
-2026-05-12 19:06:58.823,Multi-Layer_Perceptron,127.0.0.1,Recon,Bloqueado,4.2001
-2026-05-12 19:06:59.822,Multi-Layer_Perceptron,127.0.0.1,DoS-UDP/ICMP,Bloqueado,3.3421
-2026-05-12 19:07:00.825,Multi-Layer_Perceptron,127.0.0.1,DoS-UDP/ICMP,Bloqueado,3.429
-2026-05-12 19:07:01.825,Multi-Layer_Perceptron,127.0.0.1,DoS-TCP,Bloqueado,2.1174
-2026-05-12 19:07:02.829,Multi-Layer_Perceptron,127.0.0.1,DDoS-UDP/ICMP,Bloqueado,3.7326
-2026-05-12 19:07:03.831,Multi-Layer_Perceptron,127.0.0.1,Recon,Bloqueado,3.4945
-2026-05-12 19:07:04.832,Multi-Layer_Perceptron,127.0.0.1,DoS-TCP,Bloqueado,3.2591
-2026-05-12 19:07:05.834,Multi-Layer_Perceptron,127.0.0.1,BruteForce,Bloqueado,3.5561
-2026-05-12 19:07:06.835,Multi-Layer_Perceptron,127.0.0.1,DDoS-TCP,Bloqueado,3.401
-2026-05-12 19:07:07.837,Multi-Layer_Perceptron,127.0.0.1,DoS-TCP,Bloqueado,4.1884
-2026-05-12 19:07:08.838,Multi-Layer_Perceptron,127.0.0.1,Outros,Bloqueado,3.2964
-2026-05-12 19:07:09.907,Multi-Layer_Perceptron,127.0.0.1,DoS-TCP,Bloqueado,7.2399
-2026-05-12 19:07:10.841,Multi-Layer_Perceptron,127.0.0.1,Outros,Bloqueado,3.3042
-2026-05-12 19:07:11.840,Multi-Layer_Perceptron,127.0.0.1,Outros,Bloqueado,2.2751
-2026-05-12 19:07:12.844,Multi-Layer_Perceptron,127.0.0.1,Recon,Bloqueado,3.6001
-2026-05-12 19:07:13.846,Multi-Layer_Perceptron,127.0.0.1,Spoofing,Bloqueado,3.3041
-2026-05-12 19:07:14.848,Multi-Layer_Perceptron,127.0.0.1,DDoS-TCP,Bloqueado,4.1052
-2026-05-12 19:07:15.848,Multi-Layer_Perceptron,127.0.0.1,DDoS-TCP,Bloqueado,3.1223
-2026-05-12 19:07:16.852,Multi-Layer_Perceptron,127.0.0.1,Mirai-Botnet,Bloqueado,3.4274
-2026-05-12 19:07:17.853,Multi-Layer_Perceptron,127.0.0.1,Recon,Bloqueado,3.916
-2026-05-12 19:07:18.854,Multi-Layer_Perceptron,127.0.0.1,DoS-UDP/ICMP,Bloqueado,3.5705
-2026-05-12 19:07:19.857,Multi-Layer_Perceptron,127.0.0.1,DoS-UDP/ICMP,Bloqueado,4.0523
-2026-05-12 19:07:20.861,Multi-Layer_Perceptron,127.0.0.1,Outros,Bloqueado,3.5581
-2026-05-12 19:07:21.866,Multi-Layer_Perceptron,127.0.0.1,DDoS-TCP,Bloqueado,3.6183
-2026-05-12 19:07:22.868,Multi-Layer_Perceptron,127.0.0.1,DoS-UDP/ICMP,Bloqueado,3.6367
-2026-05-12 19:07:23.869,Multi-Layer_Perceptron,127.0.0.1,Spoofing,Bloqueado,3.7799
-2026-05-12 19:07:24.870,Multi-Layer_Perceptron,127.0.0.1,BruteForce,Bloqueado,3.3417
-2026-05-12 19:07:25.872,Multi-Layer_Perceptron,127.0.0.1,Outros,Bloqueado,3.4716
-2026-05-12 19:07:26.874,Multi-Layer_Perceptron,127.0.0.1,DDoS-TCP,Bloqueado,3.4933
-2026-05-12 19:07:27.876,Multi-Layer_Perceptron,127.0.0.1,DoS-UDP/ICMP,Bloqueado,4.1029
-2026-05-12 19:07:28.877,Multi-Layer_Perceptron,127.0.0.1,Recon,Bloqueado,3.6917
-2026-05-12 19:07:29.879,Multi-Layer_Perceptron,127.0.0.1,DDoS-UDP/ICMP,Bloqueado,3.5596
-2026-05-12 19:07:30.881,Multi-Layer_Perceptron,127.0.0.1,Outros,Bloqueado,3.8964
-2026-05-12 19:07:31.882,Multi-Layer_Perceptron,127.0.0.1,Outros,Bloqueado,3.2759
-2026-05-12 19:07:32.884,Multi-Layer_Perceptron,127.0.0.1,Outros,Bloqueado,3.5581
-2026-05-12 19:07:33.885,Multi-Layer_Perceptron,127.0.0.1,Spoofing,Bloqueado,3.9245
-2026-05-12 19:07:34.887,Multi-Layer_Perceptron,127.0.0.1,DoS-TCP,Bloqueado,3.4491
-2026-05-12 19:07:35.888,Multi-Layer_Perceptron,127.0.0.1,DDoS-TCP,Bloqueado,3.4738
-2026-05-12 19:07:36.891,Multi-Layer_Perceptron,127.0.0.1,DDoS-UDP/ICMP,Bloqueado,3.9517
-2026-05-12 19:07:37.890,Multi-Layer_Perceptron,127.0.0.1,DDoS-TCP,Bloqueado,3.1886
-2026-05-12 19:07:38.893,Multi-Layer_Perceptron,127.0.0.1,BruteForce,Bloqueado,3.6469
-2026-05-12 19:07:39.894,Multi-Layer_Perceptron,127.0.0.1,Spoofing,Bloqueado,3.8692
-2026-05-12 19:07:40.896,Multi-Layer_Perceptron,127.0.0.1,DDoS-UDP/ICMP,Bloqueado,4.1011
-2026-05-12 19:07:41.898,Multi-Layer_Perceptron,127.0.0.1,DDoS-TCP,Bloqueado,3.9913
-2026-05-12 19:07:42.900,Multi-Layer_Perceptron,127.0.0.1,Recon,Bloqueado,4.2994
-2026-05-12 19:07:43.900,Multi-Layer_Perceptron,127.0.0.1,DoS-UDP/ICMP,Bloqueado,3.4794
-2026-05-12 19:07:44.902,Multi-Layer_Perceptron,127.0.0.1,Outros,Bloqueado,3.2279
-2026-05-12 19:07:45.903,Multi-Layer_Perceptron,127.0.0.1,DDoS-TCP,Bloqueado,3.2278
-2026-05-12 19:07:46.905,Multi-Layer_Perceptron,127.0.0.1,DoS-UDP/ICMP,Bloqueado,3.2934
-2026-05-12 19:07:47.908,Multi-Layer_Perceptron,127.0.0.1,BruteForce,Bloqueado,3.7813
-2026-05-12 19:07:48.910,Multi-Layer_Perceptron,127.0.0.1,DDoS-TCP,Bloqueado,3.4176
-2026-05-12 19:07:49.911,Multi-Layer_Perceptron,127.0.0.1,DoS-TCP,Bloqueado,3.1857
-2026-05-12 19:07:50.913,Multi-Layer_Perceptron,127.0.0.1,Spoofing,Bloqueado,3.2084
-2026-05-12 19:07:51.915,Multi-Layer_Perceptron,127.0.0.1,Spoofing,Bloqueado,3.3695
-2026-05-12 19:07:52.916,Multi-Layer_Perceptron,127.0.0.1,Spoofing,Bloqueado,3.2069
-2026-05-12 19:07:53.916,Multi-Layer_Perceptron,127.0.0.1,Outros,Bloqueado,2.0299
-2026-05-12 19:07:54.919,Multi-Layer_Perceptron,127.0.0.1,DoS-TCP,Bloqueado,3.1278
-2026-05-12 19:07:55.920,Multi-Layer_Perceptron,127.0.0.1,Recon,Bloqueado,3.0216
-2026-05-12 19:07:56.922,Multi-Layer_Perceptron,127.0.0.1,Mirai-Botnet,Bloqueado,3.2694
-2026-05-12 19:07:57.923,Multi-Layer_Perceptron,127.0.0.1,Spoofing,Bloqueado,3.2499
-2026-05-12 19:07:58.925,Multi-Layer_Perceptron,127.0.0.1,Mirai-Botnet,Bloqueado,3.6911
-2026-05-12 19:07:59.926,Multi-Layer_Perceptron,127.0.0.1,DoS-UDP/ICMP,Bloqueado,3.2242
-2026-05-12 19:08:00.928,Multi-Layer_Perceptron,127.0.0.1,Mirai-Botnet,Bloqueado,3.5424
-2026-05-12 19:08:01.929,Multi-Layer_Perceptron,127.0.0.1,Outros,Bloqueado,3.3346
-2026-05-12 19:08:02.931,Multi-Layer_Perceptron,127.0.0.1,DoS-UDP/ICMP,Bloqueado,3.3593
-2026-05-12 19:08:03.932,Multi-Layer_Perceptron,127.0.0.1,Outros,Bloqueado,3.2271
-2026-05-12 19:08:04.934,Multi-Layer_Perceptron,127.0.0.1,Outros,Bloqueado,3.8443
-2026-05-12 19:08:05.936,Multi-Layer_Perceptron,127.0.0.1,Recon,Bloqueado,3.3992
-2026-05-12 19:08:06.938,Multi-Layer_Perceptron,127.0.0.1,Spoofing,Bloqueado,3.717
-2026-05-12 19:08:07.940,Multi-Layer_Perceptron,127.0.0.1,DoS-TCP,Bloqueado,3.2178
-2026-05-12 19:08:08.942,Multi-Layer_Perceptron,127.0.0.1,Mirai-Botnet,Bloqueado,3.8286
-2026-05-12 19:08:09.941,Multi-Layer_Perceptron,127.0.0.1,DoS-UDP/ICMP,Bloqueado,2.3617
-2026-05-12 19:08:10.944,Multi-Layer_Perceptron,127.0.0.1,Outros,Bloqueado,3.2038
-2026-05-12 19:08:11.990,Multi-Layer_Perceptron,127.0.0.1,Mirai-Botnet,Bloqueado,18.0704
-2026-05-12 19:08:12.949,Multi-Layer_Perceptron,127.0.0.1,Recon,Bloqueado,4.4004
-2026-05-12 19:08:13.949,Multi-Layer_Perceptron,127.0.0.1,DoS-TCP,Bloqueado,3.1104
-2026-05-12 19:08:14.951,Multi-Layer_Perceptron,127.0.0.1,Spoofing,Bloqueado,3.2303
-2026-05-12 19:08:15.952,Multi-Layer_Perceptron,127.0.0.1,Mirai-Botnet,Bloqueado,3.5846
-2026-05-12 19:08:16.954,Multi-Layer_Perceptron,127.0.0.1,Outros,Bloqueado,3.5745
-2026-05-12 19:08:17.956,Multi-Layer_Perceptron,127.0.0.1,Recon,Bloqueado,3.589
-2026-05-12 19:08:18.959,Multi-Layer_Perceptron,127.0.0.1,DDoS-TCP,Bloqueado,5.8586
-2026-05-12 19:08:19.958,Multi-Layer_Perceptron,127.0.0.1,DDoS-UDP/ICMP,Bloqueado,3.35
-2026-05-12 19:08:20.960,Multi-Layer_Perceptron,127.0.0.1,Recon,Bloqueado,3.8913
-2026-05-12 19:08:21.962,Multi-Layer_Perceptron,127.0.0.1,Mirai-Botnet,Bloqueado,3.5927
-2026-05-12 19:08:22.967,Multi-Layer_Perceptron,127.0.0.1,DDoS-UDP/ICMP,Bloqueado,4.7472
-2026-05-12 19:08:23.965,Multi-Layer_Perceptron,127.0.0.1,BruteForce,Bloqueado,3.3116
-2026-05-12 19:08:24.968,Multi-Layer_Perceptron,127.0.0.1,DDoS-UDP/ICMP,Bloqueado,4.3236
-2026-05-12 19:08:25.968,Multi-Layer_Perceptron,127.0.0.1,Recon,Bloqueado,4.051
-2026-05-12 19:08:26.970,Multi-Layer_Perceptron,127.0.0.1,Spoofing,Bloqueado,3.4684
-2026-05-12 19:08:27.971,Multi-Layer_Perceptron,127.0.0.1,Recon,Bloqueado,3.6099
-2026-05-12 19:08:28.973,Multi-Layer_Perceptron,127.0.0.1,Outros,Bloqueado,3.6405
-2026-05-12 19:08:29.975,Multi-Layer_Perceptron,127.0.0.1,Recon,Bloqueado,3.7821
-2026-05-12 19:08:30.976,Multi-Layer_Perceptron,127.0.0.1,DDoS-UDP/ICMP,Bloqueado,3.3789
-2026-05-12 19:08:31.977,Multi-Layer_Perceptron,127.0.0.1,Outros,Bloqueado,3.5966
-2026-05-12 19:08:32.979,Multi-Layer_Perceptron,127.0.0.1,Spoofing,Bloqueado,3.6806
-2026-05-12 19:08:33.981,Multi-Layer_Perceptron,127.0.0.1,DDoS-TCP,Bloqueado,4.5143
-2026-05-12 19:08:34.982,Multi-Layer_Perceptron,127.0.0.1,Spoofing,Bloqueado,3.2307
-2026-05-12 19:08:35.984,Multi-Layer_Perceptron,127.0.0.1,Mirai-Botnet,Bloqueado,4.1702
-2026-05-12 19:09:15.241,Random Forest,127.0.0.1,Recon,Bloqueado,40.7698
-2026-05-12 19:09:16.261,Random Forest,127.0.0.1,Mirai-Botnet,Bloqueado,58.2202
-2026-05-12 19:09:17.263,Random Forest,127.0.0.1,Recon,Bloqueado,58.5466
-2026-05-12 19:09:18.269,Random Forest,127.0.0.1,DoS-UDP/ICMP,Bloqueado,63.1223
-2026-05-12 19:09:19.265,Random Forest,127.0.0.1,DoS-UDP/ICMP,Bloqueado,57.4849
-2026-05-12 19:09:20.275,Random Forest,127.0.0.1,DDoS-TCP,Bloqueado,67.3646
-2026-05-12 19:09:21.273,Random Forest,127.0.0.1,DDoS-UDP/ICMP,Bloqueado,63.3664
-2026-05-12 19:09:22.279,Random Forest,127.0.0.1,Recon,Bloqueado,67.9119
-2026-05-12 19:09:23.279,Random Forest,127.0.0.1,DoS-TCP,Bloqueado,66.2326
-2026-05-12 19:09:24.276,Random Forest,127.0.0.1,BruteForce,Bloqueado,57.7069
-2026-05-12 19:09:25.278,Random Forest,127.0.0.1,DDoS-TCP,Bloqueado,61.4846
-2026-05-12 19:09:26.279,Random Forest,127.0.0.1,DoS-TCP,Bloqueado,60.4055
-2026-05-12 19:09:27.274,Random Forest,127.0.0.1,Outros,Bloqueado,55.8148
-2026-05-12 19:09:28.287,Random Forest,127.0.0.1,DoS-TCP,Bloqueado,65.353
-2026-05-12 19:09:29.289,Random Forest,127.0.0.1,Spoofing,Bloqueado,66.6508
-2026-05-12 19:09:30.290,Random Forest,127.0.0.1,Spoofing,Bloqueado,66.612
-2026-05-12 19:09:31.284,Random Forest,127.0.0.1,Recon,Bloqueado,58.3713
-2026-05-12 19:09:32.282,Random Forest,127.0.0.1,Outros,Bloqueado,55.7724
-2026-05-12 19:09:33.287,Random Forest,127.0.0.1,DDoS-TCP,Bloqueado,59.2985
-2026-05-12 19:09:34.288,Random Forest,127.0.0.1,DoS-TCP,Bloqueado,58.9679
-2026-05-12 19:09:35.287,Random Forest,127.0.0.1,Mirai-Botnet,Bloqueado,56.1499
-2026-05-12 19:09:36.296,Random Forest,127.0.0.1,Recon,Bloqueado,64.108
-2026-05-12 19:09:37.297,Random Forest,127.0.0.1,DoS-UDP/ICMP,Bloqueado,63.5198
-2026-05-12 19:09:38.296,Random Forest,127.0.0.1,DoS-UDP/ICMP,Bloqueado,61.4749
-2026-05-12 19:09:39.296,Random Forest,127.0.0.1,Outros,Bloqueado,60.8557
-2026-05-12 19:09:40.295,Random Forest,127.0.0.1,DDoS-TCP,Bloqueado,57.3363
-2026-05-12 19:09:41.301,Random Forest,127.0.0.1,DoS-UDP/ICMP,Bloqueado,63.1988
-2026-05-12 19:09:42.318,Random Forest,127.0.0.1,Spoofing,Bloqueado,78.6181
-2026-05-12 19:09:43.306,Random Forest,127.0.0.1,BruteForce,Bloqueado,63.9924
-2026-05-12 19:09:44.302,Random Forest,127.0.0.1,Outros,Bloqueado,58.9427
-2026-05-12 19:09:45.311,Random Forest,127.0.0.1,DDoS-TCP,Bloqueado,66.8431
-2026-05-12 19:09:46.312,Random Forest,127.0.0.1,DDoS-UDP/ICMP,Bloqueado,67.2301
-2026-05-12 19:09:47.310,Random Forest,127.0.0.1,Recon,Bloqueado,64.0141
-2026-05-12 19:09:48.304,Random Forest,127.0.0.1,DDoS-UDP/ICMP,Bloqueado,56.2885
-2026-05-12 19:09:49.315,Random Forest,127.0.0.1,Recon,Bloqueado,66.0004
-2026-05-12 19:09:50.328,Random Forest,127.0.0.1,Outros,Bloqueado,77.3757
-2026-05-12 19:09:51.317,Random Forest,127.0.0.1,Outros,Bloqueado,64.2655
-2026-05-12 19:09:52.321,Random Forest,127.0.0.1,Outros,Bloqueado,66.9511
-2026-05-12 19:09:53.321,Random Forest,127.0.0.1,DoS-TCP,Bloqueado,65.1277
-2026-05-12 19:09:54.313,Random Forest,127.0.0.1,DDoS-TCP,Bloqueado,56.388
-2026-05-12 19:09:55.313,Random Forest,127.0.0.1,DDoS-UDP/ICMP,Bloqueado,55.2367
-2026-05-12 19:09:56.322,Random Forest,127.0.0.1,DoS-TCP,Bloqueado,60.9342
-2026-05-12 19:09:57.325,Random Forest,127.0.0.1,BruteForce,Bloqueado,64.3661
-2026-05-12 19:09:58.325,Random Forest,127.0.0.1,Spoofing,Bloqueado,63.3457
-2026-05-12 19:09:59.329,Random Forest,127.0.0.1,DDoS-UDP/ICMP,Bloqueado,65.8283
-2026-05-12 19:10:00.326,Random Forest,127.0.0.1,DDoS-TCP,Bloqueado,62.129
-2026-05-12 19:10:01.330,Random Forest,127.0.0.1,Recon,Bloqueado,62.7637
-2026-05-12 19:10:02.334,Random Forest,127.0.0.1,DDoS-UDP/ICMP,Bloqueado,66.1419
-2026-05-12 19:10:03.328,Random Forest,127.0.0.1,Outros,Bloqueado,58.718
-2026-05-12 19:10:04.331,Random Forest,127.0.0.1,DDoS-TCP,Bloqueado,59.7642
-2026-05-12 19:10:05.327,Random Forest,127.0.0.1,DoS-UDP/ICMP,Bloqueado,55.0832
-2026-05-12 19:10:06.341,Random Forest,127.0.0.1,BruteForce,Bloqueado,67.8365
-2026-05-12 19:10:07.344,Random Forest,127.0.0.1,DDoS-TCP,Bloqueado,69.4437
-2026-05-12 19:10:08.338,Random Forest,127.0.0.1,DoS-TCP,Bloqueado,62.2621
-2026-05-12 19:10:09.344,Random Forest,127.0.0.1,Outros,Bloqueado,65.882
-2026-05-12 19:10:10.344,Random Forest,127.0.0.1,Outros,Bloqueado,65.3244
-2026-05-12 19:10:11.337,Random Forest,127.0.0.1,Outros,Bloqueado,56.5727
-2026-05-12 19:10:12.337,Random Forest,127.0.0.1,Outros,Bloqueado,55.1412
-2026-05-12 19:10:13.336,Random Forest,127.0.0.1,DoS-TCP,Bloqueado,44.818
-2026-05-12 19:10:14.342,Random Forest,127.0.0.1,Recon,Bloqueado,47.8282
-2026-05-12 19:10:15.338,Random Forest,127.0.0.1,Mirai-Botnet,Bloqueado,41.7404
-2026-05-12 19:10:16.364,Random Forest,127.0.0.1,Spoofing,Bloqueado,65.5049
-2026-05-12 19:10:17.359,Random Forest,127.0.0.1,Mirai-Botnet,Bloqueado,59.7219
-2026-05-12 19:10:18.363,Random Forest,127.0.0.1,DoS-UDP/ICMP,Bloqueado,61.8939
-2026-05-12 19:10:19.360,Random Forest,127.0.0.1,Mirai-Botnet,Bloqueado,58.5803
-2026-05-12 19:10:20.359,Random Forest,127.0.0.1,Recon,Bloqueado,56.3794
-2026-05-12 19:10:21.364,Random Forest,127.0.0.1,DoS-UDP/ICMP,Bloqueado,60.11
-2026-05-12 19:10:22.365,Random Forest,127.0.0.1,Outros,Bloqueado,60.4259
-2026-05-12 19:10:23.365,Random Forest,127.0.0.1,Outros,Bloqueado,59.802
-2026-05-12 19:10:24.371,Random Forest,127.0.0.1,Recon,Bloqueado,63.7375
-2026-05-12 19:10:25.364,Random Forest,127.0.0.1,Outros,Bloqueado,55.6129
-2026-05-12 19:10:26.371,Random Forest,127.0.0.1,Mirai-Botnet,Bloqueado,61.1496
-2026-05-12 19:10:27.419,Random Forest,127.0.0.1,Mirai-Botnet,Bloqueado,107.0913
-2026-05-12 19:10:28.379,Random Forest,127.0.0.1,DoS-UDP/ICMP,Bloqueado,66.4049
-2026-05-12 19:10:29.379,Random Forest,127.0.0.1,Spoofing,Bloqueado,65.3947
-2026-05-12 19:10:30.382,Random Forest,127.0.0.1,Mirai-Botnet,Bloqueado,67.0071
-2026-05-12 19:10:31.379,Random Forest,127.0.0.1,Recon,Bloqueado,62.5941
-2026-05-12 19:10:32.385,Random Forest,127.0.0.1,DoS-TCP,Bloqueado,67.5077
-2026-05-12 19:10:33.379,Random Forest,127.0.0.1,Spoofing,Bloqueado,59.3969
-2026-05-12 19:10:34.379,Random Forest,127.0.0.1,Mirai-Botnet,Bloqueado,59.0072
-2026-05-12 19:10:35.384,Random Forest,127.0.0.1,Outros,Bloqueado,63.1013
-2026-05-12 19:10:36.382,Random Forest,127.0.0.1,Recon,Bloqueado,59.5566
-2026-05-12 19:10:37.390,Random Forest,127.0.0.1,DDoS-TCP,Bloqueado,66.1247
-2026-05-12 19:10:38.390,Random Forest,127.0.0.1,DDoS-UDP/ICMP,Bloqueado,65.5056
-2026-05-12 19:10:39.385,Random Forest,127.0.0.1,Recon,Bloqueado,58.9056
-2026-05-12 19:10:40.387,Random Forest,127.0.0.1,Mirai-Botnet,Bloqueado,60.2401
-2026-05-12 19:10:41.391,Random Forest,127.0.0.1,DDoS-UDP/ICMP,Bloqueado,62.7148
-2026-05-12 19:10:42.390,Random Forest,127.0.0.1,BruteForce,Bloqueado,59.8881
-2026-05-12 19:10:43.393,Random Forest,127.0.0.1,DDoS-UDP/ICMP,Bloqueado,62.4002
-2026-05-12 19:10:44.398,Random Forest,127.0.0.1,Recon,Bloqueado,66.1557
-2026-05-12 19:10:45.392,Random Forest,127.0.0.1,Spoofing,Bloqueado,58.6061
-2026-05-12 19:10:46.393,Random Forest,127.0.0.1,Recon,Bloqueado,58.7862
-2026-05-12 19:10:47.403,Random Forest,127.0.0.1,Recon,Bloqueado,68.0576
-2026-05-12 19:10:48.404,Random Forest,127.0.0.1,Recon,Bloqueado,67.8507
-2026-05-12 19:10:49.393,Random Forest,127.0.0.1,DDoS-UDP/ICMP,Bloqueado,55.6822
-2026-05-12 19:10:50.395,Random Forest,127.0.0.1,Outros,Bloqueado,56.8406
-2026-05-12 19:10:51.407,Random Forest,127.0.0.1,Spoofing,Bloqueado,67.3939
-2026-05-12 19:10:52.407,Random Forest,127.0.0.1,DDoS-TCP,Bloqueado,66.4898
-2026-05-12 19:10:53.402,Random Forest,127.0.0.1,Spoofing,Bloqueado,60.1629
-2026-05-12 19:10:54.495,Random Forest,127.0.0.1,Mirai-Botnet,Bloqueado,151.654
-2026-05-12 19:11:29.361,XGBoost,127.0.0.1,Recon,Bloqueado,9.9491
-2026-05-12 19:11:30.361,XGBoost,127.0.0.1,Mirai-Botnet,Bloqueado,7.9978
-2026-05-12 19:11:31.362,XGBoost,127.0.0.1,Recon,Bloqueado,7.7493
-2026-05-12 19:11:32.363,XGBoost,127.0.0.1,DoS-UDP/ICMP,Bloqueado,7.8251
-2026-05-12 19:11:33.365,XGBoost,127.0.0.1,DoS-UDP/ICMP,Bloqueado,7.9337
-2026-05-12 19:11:34.366,XGBoost,127.0.0.1,DoS-TCP,Bloqueado,8.0579
-2026-05-12 19:11:35.370,XGBoost,127.0.0.1,DDoS-UDP/ICMP,Bloqueado,8.4753
-2026-05-12 19:11:36.368,XGBoost,127.0.0.1,Recon,Bloqueado,7.4039
-2026-05-12 19:11:37.370,XGBoost,127.0.0.1,DoS-TCP,Bloqueado,8.1705
-2026-05-12 19:11:38.370,XGBoost,127.0.0.1,BruteForce,Bloqueado,7.3813
-2026-05-12 19:11:39.371,XGBoost,127.0.0.1,DDoS-TCP,Bloqueado,7.314
-2026-05-12 19:11:40.375,XGBoost,127.0.0.1,DoS-TCP,Bloqueado,9.4271
-2026-05-12 19:11:41.376,XGBoost,127.0.0.1,Recon,Bloqueado,8.3435
-2026-05-12 19:11:42.375,XGBoost,127.0.0.1,DoS-TCP,Bloqueado,7.2669
-2026-05-12 19:11:43.378,XGBoost,127.0.0.1,Spoofing,Bloqueado,8.6447
-2026-05-12 19:11:44.378,XGBoost,127.0.0.1,Spoofing,Bloqueado,7.6987
-2026-05-12 19:11:45.378,XGBoost,127.0.0.1,Recon,Bloqueado,7.192
-2026-05-12 19:11:46.380,XGBoost,127.0.0.1,Outros,Bloqueado,8.0981
-2026-05-12 19:11:47.381,XGBoost,127.0.0.1,DDoS-TCP,Bloqueado,7.4791
-2026-05-12 19:11:48.382,XGBoost,127.0.0.1,DDoS-TCP,Bloqueado,7.8451
-2026-05-12 19:11:49.383,XGBoost,127.0.0.1,Mirai-Botnet,Bloqueado,7.8077
-2026-05-12 19:11:50.386,XGBoost,127.0.0.1,Recon,Bloqueado,8.7321
-2026-05-12 19:11:51.386,XGBoost,127.0.0.1,DDoS-UDP/ICMP,Bloqueado,7.6641
-2026-05-12 19:11:52.388,XGBoost,127.0.0.1,DoS-UDP/ICMP,Bloqueado,8.1181
-2026-05-12 19:11:53.389,XGBoost,127.0.0.1,Normal,Permitido,8.571
-2026-05-12 19:11:54.390,XGBoost,127.0.0.1,DDoS-TCP,Bloqueado,7.669
-2026-05-12 19:11:55.392,XGBoost,127.0.0.1,DoS-UDP/ICMP,Bloqueado,8.9393
-2026-05-12 19:11:56.386,XGBoost,127.0.0.1,Spoofing,Bloqueado,3.7137
-2026-05-12 19:11:57.392,XGBoost,127.0.0.1,BruteForce,Bloqueado,7.053
-2026-05-12 19:11:58.395,XGBoost,127.0.0.1,Outros,Bloqueado,7.8013
-2026-05-12 19:11:59.396,XGBoost,127.0.0.1,DDoS-TCP,Bloqueado,8.5723
-2026-05-12 19:12:00.396,XGBoost,127.0.0.1,DoS-UDP/ICMP,Bloqueado,7.6428
-2026-05-12 19:12:01.399,XGBoost,127.0.0.1,Outros,Bloqueado,8.7763
-2026-05-12 19:12:02.400,XGBoost,127.0.0.1,DDoS-UDP/ICMP,Bloqueado,8.0526
-2026-05-12 19:12:03.400,XGBoost,127.0.0.1,Recon,Bloqueado,7.5771
-2026-05-12 19:12:04.401,XGBoost,127.0.0.1,Normal,Permitido,7.2551
-2026-05-12 19:12:05.402,XGBoost,127.0.0.1,Normal,Permitido,7.2723
-2026-05-12 19:12:06.403,XGBoost,127.0.0.1,Normal,Permitido,6.9617
-2026-05-12 19:12:07.418,XGBoost,127.0.0.1,DoS-TCP,Bloqueado,7.4502
-2026-05-12 19:12:08.409,XGBoost,127.0.0.1,DDoS-TCP,Bloqueado,8.0475
-2026-05-12 19:12:09.410,XGBoost,127.0.0.1,DDoS-UDP/ICMP,Bloqueado,7.3373
-2026-05-12 19:12:10.411,XGBoost,127.0.0.1,DoS-TCP,Bloqueado,7.827
-2026-05-12 19:12:11.413,XGBoost,127.0.0.1,BruteForce,Bloqueado,8.4445
-2026-05-12 19:12:12.415,XGBoost,127.0.0.1,Spoofing,Bloqueado,8.817
-2026-05-12 19:12:13.415,XGBoost,127.0.0.1,DDoS-UDP/ICMP,Bloqueado,7.3813
-2026-05-12 19:12:14.411,XGBoost,127.0.0.1,DDoS-TCP,Bloqueado,3.8925
-2026-05-12 19:12:15.430,XGBoost,127.0.0.1,Recon,Bloqueado,13.3984
-2026-05-12 19:12:16.420,XGBoost,127.0.0.1,DoS-UDP/ICMP,Bloqueado,7.6392
-2026-05-12 19:12:17.422,XGBoost,127.0.0.1,Normal,Permitido,7.5791
-2026-05-12 19:12:18.424,XGBoost,127.0.0.1,DoS-TCP,Bloqueado,7.554
-2026-05-12 19:12:19.427,XGBoost,127.0.0.1,DoS-UDP/ICMP,Bloqueado,9.4392
-2026-05-12 19:12:20.425,XGBoost,127.0.0.1,BruteForce,Bloqueado,7.4827
-2026-05-12 19:12:21.431,XGBoost,127.0.0.1,DDoS-TCP,Bloqueado,10.2242
-2026-05-12 19:12:22.430,XGBoost,127.0.0.1,DDoS-TCP,Bloqueado,8.6782
-2026-05-12 19:12:23.430,XGBoost,127.0.0.1,Spoofing,Bloqueado,8.1477
-2026-05-12 19:12:24.431,XGBoost,127.0.0.1,Normal,Permitido,8.4898
-2026-05-12 19:12:25.431,XGBoost,127.0.0.1,Normal,Permitido,7.2889
-2026-05-12 19:12:26.433,XGBoost,127.0.0.1,Normal,Permitido,8.2228
-2026-05-12 19:12:27.434,XGBoost,127.0.0.1,DoS-TCP,Bloqueado,7.5922
-2026-05-12 19:12:28.435,XGBoost,127.0.0.1,Recon,Bloqueado,7.0073
-2026-05-12 19:12:29.437,XGBoost,127.0.0.1,Mirai-Botnet,Bloqueado,8.1422
-2026-05-12 19:12:30.437,XGBoost,127.0.0.1,Spoofing,Bloqueado,7.5412
-2026-05-12 19:12:31.438,XGBoost,127.0.0.1,Mirai-Botnet,Bloqueado,7.2879
-2026-05-12 19:12:32.439,XGBoost,127.0.0.1,DoS-UDP/ICMP,Bloqueado,7.4603
-2026-05-12 19:12:33.441,XGBoost,127.0.0.1,Mirai-Botnet,Bloqueado,7.7808
-2026-05-12 19:12:34.441,XGBoost,127.0.0.1,Normal,Permitido,7.6909
-2026-05-12 19:12:35.443,XGBoost,127.0.0.1,DoS-UDP/ICMP,Bloqueado,7.7207
-2026-05-12 19:12:36.443,XGBoost,127.0.0.1,Normal,Permitido,7.1553
-2026-05-12 19:12:37.446,XGBoost,127.0.0.1,Normal,Permitido,8.2705
-2026-05-12 19:12:38.446,XGBoost,127.0.0.1,Recon,Bloqueado,7.519
-2026-05-12 19:12:39.448,XGBoost,127.0.0.1,Spoofing,Bloqueado,7.8231
-2026-05-12 19:12:40.478,XGBoost,127.0.0.1,Mirai-Botnet,Bloqueado,37.021
-2026-05-12 19:12:41.450,XGBoost,127.0.0.1,Mirai-Botnet,Bloqueado,7.2967
-2026-05-12 19:12:42.450,XGBoost,127.0.0.1,DoS-UDP/ICMP,Bloqueado,7.3702
-2026-05-12 19:12:43.452,XGBoost,127.0.0.1,Spoofing,Bloqueado,8.1597
-2026-05-12 19:12:44.454,XGBoost,127.0.0.1,Mirai-Botnet,Bloqueado,8.2166
-2026-05-12 19:12:45.456,XGBoost,127.0.0.1,Recon,Bloqueado,9.8155
-2026-05-12 19:12:46.455,XGBoost,127.0.0.1,DoS-TCP,Bloqueado,7.4572
-2026-05-12 19:12:47.457,XGBoost,127.0.0.1,Spoofing,Bloqueado,7.6929
-2026-05-12 19:12:48.457,XGBoost,127.0.0.1,Mirai-Botnet,Bloqueado,6.8923
-2026-05-12 19:12:49.460,XGBoost,127.0.0.1,Normal,Permitido,8.2285
-2026-05-12 19:12:50.463,XGBoost,127.0.0.1,Recon,Bloqueado,8.2305
-2026-05-12 19:12:51.458,XGBoost,127.0.0.1,DoS-TCP,Bloqueado,4.2455
-2026-05-12 19:12:52.465,XGBoost,127.0.0.1,DDoS-UDP/ICMP,Bloqueado,8.9066
-2026-05-12 19:12:53.465,XGBoost,127.0.0.1,Recon,Bloqueado,8.5919
-2026-05-12 19:12:54.467,XGBoost,127.0.0.1,Mirai-Botnet,Bloqueado,9.0772
-2026-05-12 19:12:55.521,XGBoost,127.0.0.1,DDoS-UDP/ICMP,Bloqueado,6.3845
-2026-05-12 19:12:56.528,XGBoost,127.0.0.1,BruteForce,Bloqueado,10.5869
-2026-05-12 19:12:57.530,XGBoost,127.0.0.1,DDoS-UDP/ICMP,Bloqueado,11.2299
-2026-05-12 19:12:58.523,XGBoost,127.0.0.1,Recon,Bloqueado,4.4523
-2026-05-12 19:12:59.533,XGBoost,127.0.0.1,Spoofing,Bloqueado,10.4682
-2026-05-12 19:13:00.536,XGBoost,127.0.0.1,Recon,Bloqueado,7.9141
-2026-05-12 19:13:01.537,XGBoost,127.0.0.1,Recon,Bloqueado,8.5948
-2026-05-12 19:13:02.538,XGBoost,127.0.0.1,Recon,Bloqueado,7.8635
-2026-05-12 19:13:03.539,XGBoost,127.0.0.1,DDoS-UDP/ICMP,Bloqueado,8.0226
-2026-05-12 19:13:04.542,XGBoost,127.0.0.1,Normal,Permitido,10.2053
-2026-05-12 19:13:05.542,XGBoost,127.0.0.1,Spoofing,Bloqueado,8.312
-2026-05-12 19:13:06.543,XGBoost,127.0.0.1,DDoS-TCP,Bloqueado,7.4437
-2026-05-12 19:13:07.544,XGBoost,127.0.0.1,Spoofing,Bloqueado,8.3008
-2026-05-12 19:13:08.545,XGBoost,127.0.0.1,Mirai-Botnet,Bloqueado,7.393
+2026-05-13 17:06:55.392,LightGBM,10.0.0.1,Recon,Bloqueado,3.3553
+2026-05-13 17:06:56.407,LightGBM,10.0.0.1,Mirai-Botnet,Bloqueado,3.7401
+2026-05-13 17:06:57.393,LightGBM,10.0.0.1,Recon,Bloqueado,1.4311
+2026-05-13 17:06:58.402,LightGBM,10.0.0.1,DoS-UDP/ICMP,Bloqueado,1.729
+2026-05-13 17:06:59.403,LightGBM,10.0.0.1,DoS-UDP/ICMP,Bloqueado,1.3704
+2026-05-13 17:07:00.399,LightGBM,10.0.0.1,DoS-TCP,Bloqueado,1.7579
+2026-05-13 17:07:01.404,LightGBM,10.0.0.1,DDoS-UDP/ICMP,Bloqueado,1.8981
+2026-05-13 17:07:02.400,LightGBM,10.0.0.1,Recon,Bloqueado,1.669
+2026-05-13 17:07:03.404,LightGBM,10.0.0.1,DoS-TCP,Bloqueado,1.4855
+2026-05-13 17:07:04.420,LightGBM,10.0.0.1,BruteForce,Bloqueado,2.0521
+2026-05-13 17:07:05.410,LightGBM,10.0.0.1,DDoS-TCP,Bloqueado,3.091
+2026-05-13 17:07:06.409,LightGBM,10.0.0.1,DoS-TCP,Bloqueado,1.3014
+2026-05-13 17:07:07.408,LightGBM,10.0.0.1,Normal,Permitido,2.4213
+2026-05-13 17:07:08.412,LightGBM,10.0.0.1,DoS-TCP,Bloqueado,2.1484
+2026-05-13 17:07:09.414,LightGBM,10.0.0.1,Spoofing,Bloqueado,2.2424
+2026-05-13 17:07:10.414,LightGBM,10.0.0.1,Spoofing,Bloqueado,1.5454
+2026-05-13 17:07:11.414,LightGBM,10.0.0.1,Recon,Bloqueado,3.0918
+2026-05-13 17:07:12.416,LightGBM,10.0.0.1,Outros,Bloqueado,2.1359
+2026-05-13 17:07:13.421,LightGBM,10.0.0.1,DDoS-TCP,Bloqueado,1.6921
+2026-05-13 17:07:14.423,LightGBM,10.0.0.1,DDoS-TCP,Bloqueado,1.4697
+2026-05-13 17:07:15.425,LightGBM,10.0.0.1,Mirai-Botnet,Bloqueado,1.6418
+2026-05-13 17:07:16.424,LightGBM,10.0.0.1,Recon,Bloqueado,2.1731
+2026-05-13 17:07:17.431,LightGBM,10.0.0.1,DDoS-UDP/ICMP,Bloqueado,1.4549
+2026-05-13 17:07:18.431,LightGBM,10.0.0.1,DoS-UDP/ICMP,Bloqueado,1.4028
+2026-05-13 17:07:19.427,LightGBM,10.0.0.1,Normal,Permitido,1.2646
+2026-05-13 17:07:20.433,LightGBM,10.0.0.1,DDoS-TCP,Bloqueado,2.9969
+2026-05-13 17:07:21.437,LightGBM,10.0.0.1,DoS-UDP/ICMP,Bloqueado,2.0506
+2026-05-13 17:07:22.437,LightGBM,10.0.0.1,Spoofing,Bloqueado,4.9085
+2026-05-13 17:07:23.435,LightGBM,10.0.0.1,BruteForce,Bloqueado,1.3863
+2026-05-13 17:07:24.433,LightGBM,10.0.0.1,Outros,Bloqueado,1.4096
+2026-05-13 17:07:25.439,LightGBM,10.0.0.1,DDoS-TCP,Bloqueado,1.6631
+2026-05-13 17:07:26.443,LightGBM,10.0.0.1,DoS-UDP/ICMP,Bloqueado,1.7814
+2026-05-13 17:07:27.439,LightGBM,10.0.0.1,Recon,Bloqueado,1.4748
+2026-05-13 17:07:28.447,LightGBM,10.0.0.1,DDoS-UDP/ICMP,Bloqueado,1.6681
+2026-05-13 17:07:29.444,LightGBM,10.0.0.1,Recon,Bloqueado,1.7517
+2026-05-13 17:07:30.446,LightGBM,10.0.0.1,Recon,Bloqueado,1.7177
+2026-05-13 17:07:31.446,LightGBM,10.0.0.1,Normal,Permitido,1.5301
+2026-05-13 17:07:32.448,LightGBM,10.0.0.1,Normal,Permitido,2.2024
+2026-05-13 17:07:33.452,LightGBM,10.0.0.1,DoS-TCP,Bloqueado,2.0361
+2026-05-13 17:07:34.454,LightGBM,10.0.0.1,DDoS-TCP,Bloqueado,1.4537
+2026-05-13 17:07:35.457,LightGBM,10.0.0.1,DDoS-UDP/ICMP,Bloqueado,1.5666
+2026-05-13 17:07:36.455,LightGBM,10.0.0.1,DoS-TCP,Bloqueado,1.6049
+2026-05-13 17:07:37.458,LightGBM,10.0.0.1,BruteForce,Bloqueado,1.6186
+2026-05-13 17:07:38.459,LightGBM,10.0.0.1,Spoofing,Bloqueado,1.604
+2026-05-13 17:07:39.468,LightGBM,10.0.0.1,DDoS-UDP/ICMP,Bloqueado,2.3659
+2026-05-13 17:07:40.466,LightGBM,10.0.0.1,DDoS-TCP,Bloqueado,2.2112
+2026-05-13 17:07:41.462,LightGBM,10.0.0.1,Recon,Bloqueado,2.1157
+2026-05-13 17:07:42.468,LightGBM,10.0.0.1,DoS-UDP/ICMP,Bloqueado,2.1657
+2026-05-13 17:07:43.462,LightGBM,10.0.0.1,Normal,Permitido,2.3383
+2026-05-13 17:07:44.468,LightGBM,10.0.0.1,DoS-TCP,Bloqueado,1.8477
+2026-05-13 17:07:45.472,LightGBM,10.0.0.1,DoS-UDP/ICMP,Bloqueado,1.392
+2026-05-13 17:07:46.470,LightGBM,10.0.0.1,BruteForce,Bloqueado,1.427
+2026-05-13 17:07:47.477,LightGBM,10.0.0.1,DDoS-TCP,Bloqueado,3.0511
+2026-05-13 17:07:48.477,LightGBM,10.0.0.1,DDoS-TCP,Bloqueado,2.4582
+2026-05-13 17:07:49.473,LightGBM,10.0.0.1,Recon,Bloqueado,2.1206
+2026-05-13 17:07:50.474,LightGBM,10.0.0.1,Normal,Permitido,1.3789
+2026-05-13 17:07:51.476,LightGBM,10.0.0.1,Normal,Permitido,1.4163
+2026-05-13 17:07:52.477,LightGBM,10.0.0.1,Normal,Permitido,1.5209
+2026-05-13 17:07:53.482,LightGBM,10.0.0.1,DoS-TCP,Bloqueado,1.6654
+2026-05-13 17:07:54.480,LightGBM,10.0.0.1,Recon,Bloqueado,2.2619
+2026-05-13 17:07:55.487,LightGBM,10.0.0.1,Mirai-Botnet,Bloqueado,2.3453
+2026-05-13 17:07:56.490,LightGBM,10.0.0.1,Spoofing,Bloqueado,1.6997
+2026-05-13 17:07:57.496,LightGBM,10.0.0.1,Mirai-Botnet,Bloqueado,3.945
+2026-05-13 17:07:58.497,LightGBM,10.0.0.1,DoS-UDP/ICMP,Bloqueado,1.4763
+2026-05-13 17:07:59.496,LightGBM,10.0.0.1,Mirai-Botnet,Bloqueado,1.6842
+2026-05-13 17:08:00.495,LightGBM,10.0.0.1,Normal,Permitido,1.8772
+2026-05-13 17:08:01.501,LightGBM,10.0.0.1,DoS-UDP/ICMP,Bloqueado,1.5024
+2026-05-13 17:08:02.497,LightGBM,10.0.0.1,Normal,Permitido,1.6759
+2026-05-13 17:08:03.500,LightGBM,10.0.0.1,Normal,Permitido,2.4253
+2026-05-13 17:08:04.500,LightGBM,10.0.0.1,Recon,Bloqueado,1.4746
+2026-05-13 17:08:05.506,LightGBM,10.0.0.1,Spoofing,Bloqueado,2.235
+2026-05-13 17:08:06.506,LightGBM,10.0.0.1,DoS-TCP,Bloqueado,2.0444
+2026-05-13 17:08:07.508,LightGBM,10.0.0.1,Mirai-Botnet,Bloqueado,1.6483
+2026-05-13 17:08:08.515,LightGBM,10.0.0.1,DoS-UDP/ICMP,Bloqueado,3.5015
+2026-05-13 17:08:09.513,LightGBM,10.0.0.1,Spoofing,Bloqueado,2.1185
+2026-05-13 17:08:10.514,LightGBM,10.0.0.1,Mirai-Botnet,Bloqueado,1.5317
+2026-05-13 17:08:11.511,LightGBM,10.0.0.1,Recon,Bloqueado,1.2564
+2026-05-13 17:08:12.516,LightGBM,10.0.0.1,DoS-TCP,Bloqueado,1.4989
+2026-05-13 17:08:13.517,LightGBM,10.0.0.1,Spoofing,Bloqueado,1.7025
+2026-05-13 17:08:14.519,LightGBM,10.0.0.1,Mirai-Botnet,Bloqueado,1.543
+2026-05-13 17:08:15.517,LightGBM,10.0.0.1,Normal,Permitido,1.3135
+2026-05-13 17:08:16.519,LightGBM,10.0.0.1,Recon,Bloqueado,1.8783
+2026-05-13 17:08:17.524,LightGBM,10.0.0.1,DoS-TCP,Bloqueado,2.0408
+2026-05-13 17:08:18.528,LightGBM,10.0.0.1,DDoS-UDP/ICMP,Bloqueado,2.4905
+2026-05-13 17:08:19.523,LightGBM,10.0.0.1,Recon,Bloqueado,2.1314
+2026-05-13 17:08:20.528,LightGBM,10.0.0.1,Mirai-Botnet,Bloqueado,2.9647
+2026-05-13 17:08:21.531,LightGBM,10.0.0.1,DDoS-UDP/ICMP,Bloqueado,1.5461
+2026-05-13 17:08:22.530,LightGBM,10.0.0.1,BruteForce,Bloqueado,2.2098
+2026-05-13 17:08:23.534,LightGBM,10.0.0.1,DDoS-UDP/ICMP,Bloqueado,1.3899
+2026-05-13 17:08:24.533,LightGBM,10.0.0.1,Recon,Bloqueado,4.736
+2026-05-13 17:08:25.536,LightGBM,10.0.0.1,Spoofing,Bloqueado,2.706
+2026-05-13 17:08:26.535,LightGBM,10.0.0.1,Recon,Bloqueado,2.2966
+2026-05-13 17:08:27.536,LightGBM,10.0.0.1,Recon,Bloqueado,1.5367
+2026-05-13 17:08:28.541,LightGBM,10.0.0.1,Recon,Bloqueado,3.5013
+2026-05-13 17:08:29.547,LightGBM,10.0.0.1,DDoS-UDP/ICMP,Bloqueado,3.2531
+2026-05-13 17:08:30.541,LightGBM,10.0.0.1,Normal,Permitido,1.8513
+2026-05-13 17:08:31.545,LightGBM,10.0.0.1,Spoofing,Bloqueado,1.6189
+2026-05-13 17:08:32.547,LightGBM,10.0.0.1,DDoS-TCP,Bloqueado,1.3337
+2026-05-13 17:08:33.549,LightGBM,10.0.0.1,Spoofing,Bloqueado,2.3535
+2026-05-13 17:08:34.552,LightGBM,10.0.0.1,Mirai-Botnet,Bloqueado,1.5484
+2026-05-13 17:09:23.346,Multi-Layer_Perceptron,10.0.0.1,Recon,Bloqueado,2.5595
+2026-05-13 17:09:24.347,Multi-Layer_Perceptron,10.0.0.1,Mirai-Botnet,Bloqueado,1.0795
+2026-05-13 17:09:25.346,Multi-Layer_Perceptron,10.0.0.1,Recon,Bloqueado,1.0367
+2026-05-13 17:09:26.353,Multi-Layer_Perceptron,10.0.0.1,DoS-UDP/ICMP,Bloqueado,1.2212
+2026-05-13 17:09:27.354,Multi-Layer_Perceptron,10.0.0.1,DoS-UDP/ICMP,Bloqueado,1.4694
+2026-05-13 17:09:28.354,Multi-Layer_Perceptron,10.0.0.1,DoS-TCP,Bloqueado,1.2679
+2026-05-13 17:09:29.360,Multi-Layer_Perceptron,10.0.0.1,DDoS-UDP/ICMP,Bloqueado,2.1576
+2026-05-13 17:09:30.352,Multi-Layer_Perceptron,10.0.0.1,Recon,Bloqueado,1.3386
+2026-05-13 17:09:31.355,Multi-Layer_Perceptron,10.0.0.1,DoS-TCP,Bloqueado,1.1502
+2026-05-13 17:09:32.360,Multi-Layer_Perceptron,10.0.0.1,BruteForce,Bloqueado,1.4859
+2026-05-13 17:09:33.361,Multi-Layer_Perceptron,10.0.0.1,DDoS-TCP,Bloqueado,1.94
+2026-05-13 17:09:34.362,Multi-Layer_Perceptron,10.0.0.1,DoS-TCP,Bloqueado,1.9533
+2026-05-13 17:09:35.359,Multi-Layer_Perceptron,10.0.0.1,Outros,Bloqueado,1.5129
+2026-05-13 17:09:36.362,Multi-Layer_Perceptron,10.0.0.1,DoS-TCP,Bloqueado,1.1361
+2026-05-13 17:09:37.361,Multi-Layer_Perceptron,10.0.0.1,Outros,Bloqueado,1.1055
+2026-05-13 17:09:38.362,Multi-Layer_Perceptron,10.0.0.1,Outros,Bloqueado,1.1742
+2026-05-13 17:09:39.364,Multi-Layer_Perceptron,10.0.0.1,Recon,Bloqueado,1.5833
+2026-05-13 17:09:40.367,Multi-Layer_Perceptron,10.0.0.1,Spoofing,Bloqueado,1.1475
+2026-05-13 17:09:41.369,Multi-Layer_Perceptron,10.0.0.1,DDoS-TCP,Bloqueado,1.075
+2026-05-13 17:09:42.369,Multi-Layer_Perceptron,10.0.0.1,DDoS-TCP,Bloqueado,1.0586
+2026-05-13 17:09:43.370,Multi-Layer_Perceptron,10.0.0.1,Mirai-Botnet,Bloqueado,1.1913
+2026-05-13 17:09:44.370,Multi-Layer_Perceptron,10.0.0.1,Recon,Bloqueado,1.7044
+2026-05-13 17:09:45.379,Multi-Layer_Perceptron,10.0.0.1,DoS-UDP/ICMP,Bloqueado,1.2994
+2026-05-13 17:09:46.378,Multi-Layer_Perceptron,10.0.0.1,DoS-UDP/ICMP,Bloqueado,1.0463
+2026-05-13 17:09:47.374,Multi-Layer_Perceptron,10.0.0.1,Outros,Bloqueado,1.5386
+2026-05-13 17:09:48.380,Multi-Layer_Perceptron,10.0.0.1,DDoS-TCP,Bloqueado,1.0468
+2026-05-13 17:09:49.382,Multi-Layer_Perceptron,10.0.0.1,DoS-UDP/ICMP,Bloqueado,1.0481
+2026-05-13 17:09:50.381,Multi-Layer_Perceptron,10.0.0.1,Spoofing,Bloqueado,1.2667
+2026-05-13 17:09:51.384,Multi-Layer_Perceptron,10.0.0.1,BruteForce,Bloqueado,1.4928
+2026-05-13 17:09:52.380,Multi-Layer_Perceptron,10.0.0.1,Outros,Bloqueado,0.9788
+2026-05-13 17:09:53.385,Multi-Layer_Perceptron,10.0.0.1,DDoS-TCP,Bloqueado,0.9866
+2026-05-13 17:09:54.391,Multi-Layer_Perceptron,10.0.0.1,DoS-UDP/ICMP,Bloqueado,1.1055
+2026-05-13 17:09:55.386,Multi-Layer_Perceptron,10.0.0.1,Recon,Bloqueado,1.81
+2026-05-13 17:09:56.392,Multi-Layer_Perceptron,10.0.0.1,DDoS-UDP/ICMP,Bloqueado,1.0767
+2026-05-13 17:09:57.387,Multi-Layer_Perceptron,10.0.0.1,Outros,Bloqueado,1.2365
+2026-05-13 17:09:58.389,Multi-Layer_Perceptron,10.0.0.1,Outros,Bloqueado,1.4908
+2026-05-13 17:09:59.391,Multi-Layer_Perceptron,10.0.0.1,Outros,Bloqueado,1.6522
+2026-05-13 17:10:00.394,Multi-Layer_Perceptron,10.0.0.1,Spoofing,Bloqueado,1.3124
+2026-05-13 17:10:01.397,Multi-Layer_Perceptron,10.0.0.1,DoS-TCP,Bloqueado,1.3334
+2026-05-13 17:10:02.396,Multi-Layer_Perceptron,10.0.0.1,DDoS-TCP,Bloqueado,1.0053
+2026-05-13 17:10:03.402,Multi-Layer_Perceptron,10.0.0.1,DDoS-UDP/ICMP,Bloqueado,1.6768
+2026-05-13 17:10:04.401,Multi-Layer_Perceptron,10.0.0.1,DDoS-TCP,Bloqueado,1.3026
+2026-05-13 17:10:05.401,Multi-Layer_Perceptron,10.0.0.1,BruteForce,Bloqueado,1.4074
+2026-05-13 17:10:06.403,Multi-Layer_Perceptron,10.0.0.1,Spoofing,Bloqueado,1.9644
+2026-05-13 17:10:07.414,Multi-Layer_Perceptron,10.0.0.1,DDoS-UDP/ICMP,Bloqueado,3.1382
+2026-05-13 17:10:08.410,Multi-Layer_Perceptron,10.0.0.1,DDoS-TCP,Bloqueado,2.2288
+2026-05-13 17:10:09.407,Multi-Layer_Perceptron,10.0.0.1,Recon,Bloqueado,1.1325
+2026-05-13 17:10:10.415,Multi-Layer_Perceptron,10.0.0.1,DoS-UDP/ICMP,Bloqueado,1.3072
+2026-05-13 17:10:11.409,Multi-Layer_Perceptron,10.0.0.1,Outros,Bloqueado,1.4398
+2026-05-13 17:10:12.415,Multi-Layer_Perceptron,10.0.0.1,DDoS-TCP,Bloqueado,1.6986
+2026-05-13 17:10:13.417,Multi-Layer_Perceptron,10.0.0.1,DoS-UDP/ICMP,Bloqueado,1.302
+2026-05-13 17:10:14.417,Multi-Layer_Perceptron,10.0.0.1,BruteForce,Bloqueado,1.3899
+2026-05-13 17:10:15.419,Multi-Layer_Perceptron,10.0.0.1,DDoS-TCP,Bloqueado,1.0716
+2026-05-13 17:10:16.420,Multi-Layer_Perceptron,10.0.0.1,DoS-TCP,Bloqueado,1.6118
+2026-05-13 17:10:17.420,Multi-Layer_Perceptron,10.0.0.1,Spoofing,Bloqueado,1.633
+2026-05-13 17:10:18.422,Multi-Layer_Perceptron,10.0.0.1,Spoofing,Bloqueado,1.4758
+2026-05-13 17:10:19.423,Multi-Layer_Perceptron,10.0.0.1,Spoofing,Bloqueado,1.9823
+2026-05-13 17:10:20.422,Multi-Layer_Perceptron,10.0.0.1,Outros,Bloqueado,1.5228
+2026-05-13 17:10:21.428,Multi-Layer_Perceptron,10.0.0.1,DoS-TCP,Bloqueado,1.2901
+2026-05-13 17:10:22.425,Multi-Layer_Perceptron,10.0.0.1,Recon,Bloqueado,1.5161
+2026-05-13 17:10:23.430,Multi-Layer_Perceptron,10.0.0.1,Mirai-Botnet,Bloqueado,1.5952
+2026-05-13 17:10:24.431,Multi-Layer_Perceptron,10.0.0.1,Spoofing,Bloqueado,1.281
+2026-05-13 17:10:25.433,Multi-Layer_Perceptron,10.0.0.1,Mirai-Botnet,Bloqueado,1.0412
+2026-05-13 17:10:26.443,Multi-Layer_Perceptron,10.0.0.1,DoS-UDP/ICMP,Bloqueado,2.1458
+2026-05-13 17:10:27.437,Multi-Layer_Perceptron,10.0.0.1,Mirai-Botnet,Bloqueado,1.3886
+2026-05-13 17:10:28.435,Multi-Layer_Perceptron,10.0.0.1,Outros,Bloqueado,1.4336
+2026-05-13 17:10:29.442,Multi-Layer_Perceptron,10.0.0.1,DoS-UDP/ICMP,Bloqueado,1.1712
+2026-05-13 17:10:30.438,Multi-Layer_Perceptron,10.0.0.1,Outros,Bloqueado,1.1174
+2026-05-13 17:10:31.439,Multi-Layer_Perceptron,10.0.0.1,Outros,Bloqueado,1.3833
+2026-05-13 17:10:32.440,Multi-Layer_Perceptron,10.0.0.1,Recon,Bloqueado,1.6435
+2026-05-13 17:10:33.445,Multi-Layer_Perceptron,10.0.0.1,Spoofing,Bloqueado,1.3274
+2026-05-13 17:10:34.447,Multi-Layer_Perceptron,10.0.0.1,DoS-TCP,Bloqueado,1.2574
+2026-05-13 17:10:35.448,Multi-Layer_Perceptron,10.0.0.1,Mirai-Botnet,Bloqueado,1.7063
+2026-05-13 17:10:36.454,Multi-Layer_Perceptron,10.0.0.1,DoS-UDP/ICMP,Bloqueado,2.4541
+2026-05-13 17:10:37.450,Multi-Layer_Perceptron,10.0.0.1,Outros,Bloqueado,1.7386
+2026-05-13 17:10:38.452,Multi-Layer_Perceptron,10.0.0.1,Mirai-Botnet,Bloqueado,0.9718
+2026-05-13 17:10:39.451,Multi-Layer_Perceptron,10.0.0.1,Recon,Bloqueado,1.6094
+2026-05-13 17:10:40.455,Multi-Layer_Perceptron,10.0.0.1,DoS-TCP,Bloqueado,1.4138
+2026-05-13 17:10:41.458,Multi-Layer_Perceptron,10.0.0.1,Spoofing,Bloqueado,2.0646
+2026-05-13 17:10:42.458,Multi-Layer_Perceptron,10.0.0.1,Mirai-Botnet,Bloqueado,2.31
+2026-05-13 17:10:43.457,Multi-Layer_Perceptron,10.0.0.1,Outros,Bloqueado,2.1759
+2026-05-13 17:10:44.459,Multi-Layer_Perceptron,10.0.0.1,Recon,Bloqueado,1.8374
+2026-05-13 17:10:45.463,Multi-Layer_Perceptron,10.0.0.1,DDoS-TCP,Bloqueado,1.2088
+2026-05-13 17:10:46.468,Multi-Layer_Perceptron,10.0.0.1,DDoS-UDP/ICMP,Bloqueado,1.0906
+2026-05-13 17:10:47.463,Multi-Layer_Perceptron,10.0.0.1,Recon,Bloqueado,1.0939
+2026-05-13 17:10:48.467,Multi-Layer_Perceptron,10.0.0.1,Mirai-Botnet,Bloqueado,1.379
+2026-05-13 17:10:49.471,Multi-Layer_Perceptron,10.0.0.1,DDoS-UDP/ICMP,Bloqueado,1.4861
+2026-05-13 17:10:50.470,Multi-Layer_Perceptron,10.0.0.1,BruteForce,Bloqueado,1.6478
+2026-05-13 17:10:51.474,Multi-Layer_Perceptron,10.0.0.1,DDoS-UDP/ICMP,Bloqueado,1.0702
+2026-05-13 17:10:52.469,Multi-Layer_Perceptron,10.0.0.1,Recon,Bloqueado,1.5644
+2026-05-13 17:10:53.474,Multi-Layer_Perceptron,10.0.0.1,Spoofing,Bloqueado,1.8218
+2026-05-13 17:10:54.472,Multi-Layer_Perceptron,10.0.0.1,Recon,Bloqueado,1.3659
+2026-05-13 17:10:55.474,Multi-Layer_Perceptron,10.0.0.1,Outros,Bloqueado,1.3473
+2026-05-13 17:10:56.475,Multi-Layer_Perceptron,10.0.0.1,Recon,Bloqueado,1.6232
+2026-05-13 17:10:57.485,Multi-Layer_Perceptron,10.0.0.1,DDoS-UDP/ICMP,Bloqueado,1.838
+2026-05-13 17:10:58.480,Multi-Layer_Perceptron,10.0.0.1,Outros,Bloqueado,2.2344
+2026-05-13 17:10:59.484,Multi-Layer_Perceptron,10.0.0.1,Spoofing,Bloqueado,1.1731
+2026-05-13 17:11:00.486,Multi-Layer_Perceptron,10.0.0.1,DDoS-TCP,Bloqueado,1.2443
+2026-05-13 17:11:01.488,Multi-Layer_Perceptron,10.0.0.1,Spoofing,Bloqueado,1.004
+2026-05-13 17:11:02.488,Multi-Layer_Perceptron,10.0.0.1,Mirai-Botnet,Bloqueado,1.1431
+2026-05-13 17:12:06.540,Random Forest,10.0.0.1,Recon,Bloqueado,63.3407
+2026-05-13 17:12:07.538,Random Forest,10.0.0.1,Mirai-Botnet,Bloqueado,17.8664
+2026-05-13 17:12:08.489,Random Forest,10.0.0.1,Recon,Bloqueado,16.486
+2026-05-13 17:12:09.501,Random Forest,10.0.0.1,DoS-UDP/ICMP,Bloqueado,13.1734
+2026-05-13 17:12:10.554,Random Forest,10.0.0.1,DoS-UDP/ICMP,Bloqueado,56.46
+2026-05-13 17:12:11.512,Random Forest,10.0.0.1,DDoS-TCP,Bloqueado,14.0297
+2026-05-13 17:12:12.516,Random Forest,10.0.0.1,DDoS-UDP/ICMP,Bloqueado,13.8621
+2026-05-13 17:12:13.509,Random Forest,10.0.0.1,Recon,Bloqueado,13.7639
+2026-05-13 17:12:14.514,Random Forest,10.0.0.1,DDoS-TCP,Bloqueado,12.841
+2026-05-13 17:12:15.518,Random Forest,10.0.0.1,BruteForce,Bloqueado,14.7948
+2026-05-13 17:12:16.518,Random Forest,10.0.0.1,DoS-TCP,Bloqueado,14.0012
+2026-05-13 17:12:17.520,Random Forest,10.0.0.1,DoS-TCP,Bloqueado,13.9594
+2026-05-13 17:12:18.518,Random Forest,10.0.0.1,Outros,Bloqueado,14.7828
+2026-05-13 17:12:19.524,Random Forest,10.0.0.1,DoS-TCP,Bloqueado,14.4921
+2026-05-13 17:12:20.523,Random Forest,10.0.0.1,Spoofing,Bloqueado,13.2982
+2026-05-13 17:12:21.526,Random Forest,10.0.0.1,Spoofing,Bloqueado,13.3407
+2026-05-13 17:12:22.525,Random Forest,10.0.0.1,Recon,Bloqueado,14.0548
+2026-05-13 17:12:23.526,Random Forest,10.0.0.1,Outros,Bloqueado,14.7651
+2026-05-13 17:12:24.530,Random Forest,10.0.0.1,DDoS-TCP,Bloqueado,13.4963
+2026-05-13 17:12:25.532,Random Forest,10.0.0.1,DoS-TCP,Bloqueado,13.5983
+2026-05-13 17:12:26.533,Random Forest,10.0.0.1,Mirai-Botnet,Bloqueado,14.8599
+2026-05-13 17:12:27.529,Random Forest,10.0.0.1,Recon,Bloqueado,13.6498
+2026-05-13 17:12:28.537,Random Forest,10.0.0.1,DoS-UDP/ICMP,Bloqueado,12.8604
+2026-05-13 17:12:29.540,Random Forest,10.0.0.1,DoS-UDP/ICMP,Bloqueado,14.1289
+2026-05-13 17:12:30.547,Random Forest,10.0.0.1,Outros,Bloqueado,25.3589
+2026-05-13 17:12:31.541,Random Forest,10.0.0.1,DDoS-TCP,Bloqueado,13.5851
+2026-05-13 17:12:32.547,Random Forest,10.0.0.1,DoS-UDP/ICMP,Bloqueado,14.1362
+2026-05-13 17:12:33.545,Random Forest,10.0.0.1,Spoofing,Bloqueado,14.0194
+2026-05-13 17:12:34.550,Random Forest,10.0.0.1,BruteForce,Bloqueado,13.2861
+2026-05-13 17:12:35.545,Random Forest,10.0.0.1,Outros,Bloqueado,14.488
+2026-05-13 17:12:36.560,Random Forest,10.0.0.1,DDoS-TCP,Bloqueado,24.427
+2026-05-13 17:12:37.555,Random Forest,10.0.0.1,DDoS-UDP/ICMP,Bloqueado,15.841
+2026-05-13 17:12:38.548,Random Forest,10.0.0.1,Recon,Bloqueado,14.1472
+2026-05-13 17:12:39.558,Random Forest,10.0.0.1,DDoS-UDP/ICMP,Bloqueado,13.5868
+2026-05-13 17:12:40.551,Random Forest,10.0.0.1,Recon,Bloqueado,14.7455
+2026-05-13 17:12:41.550,Random Forest,10.0.0.1,Outros,Bloqueado,13.0834
+2026-05-13 17:12:42.553,Random Forest,10.0.0.1,Outros,Bloqueado,14.8856
+2026-05-13 17:12:43.553,Random Forest,10.0.0.1,Outros,Bloqueado,12.9233
+2026-05-13 17:12:44.558,Random Forest,10.0.0.1,DoS-TCP,Bloqueado,14.2664
+2026-05-13 17:12:45.560,Random Forest,10.0.0.1,DDoS-TCP,Bloqueado,13.2741
+2026-05-13 17:12:46.566,Random Forest,10.0.0.1,DDoS-UDP/ICMP,Bloqueado,14.4983
+2026-05-13 17:12:47.565,Random Forest,10.0.0.1,DoS-TCP,Bloqueado,13.2626
+2026-05-13 17:12:48.565,Random Forest,10.0.0.1,BruteForce,Bloqueado,13.1086
+2026-05-13 17:12:49.567,Random Forest,10.0.0.1,Spoofing,Bloqueado,14.4995
+2026-05-13 17:12:50.571,Random Forest,10.0.0.1,DDoS-UDP/ICMP,Bloqueado,13.8563
+2026-05-13 17:12:51.570,Random Forest,10.0.0.1,DDoS-TCP,Bloqueado,13.5662
+2026-05-13 17:12:52.579,Random Forest,10.0.0.1,Recon,Bloqueado,24.3977
+2026-05-13 17:12:53.577,Random Forest,10.0.0.1,DDoS-UDP/ICMP,Bloqueado,14.3352
+2026-05-13 17:12:54.572,Random Forest,10.0.0.1,Outros,Bloqueado,14.0149
+2026-05-13 17:12:55.579,Random Forest,10.0.0.1,DDoS-TCP,Bloqueado,13.7308
+2026-05-13 17:12:56.586,Random Forest,10.0.0.1,DoS-UDP/ICMP,Bloqueado,17.5167
+2026-05-13 17:12:57.581,Random Forest,10.0.0.1,BruteForce,Bloqueado,14.1145
+2026-05-13 17:12:58.588,Random Forest,10.0.0.1,DDoS-TCP,Bloqueado,17.879
+2026-05-13 17:12:59.587,Random Forest,10.0.0.1,DoS-TCP,Bloqueado,15.4589
+2026-05-13 17:13:00.583,Random Forest,10.0.0.1,Recon,Bloqueado,13.4122
+2026-05-13 17:13:01.590,Random Forest,10.0.0.1,Outros,Bloqueado,16.7117
+2026-05-13 17:13:02.590,Random Forest,10.0.0.1,Outros,Bloqueado,15.0727
+2026-05-13 17:13:03.586,Random Forest,10.0.0.1,Outros,Bloqueado,13.0349
+2026-05-13 17:13:04.608,Random Forest,10.0.0.1,DoS-TCP,Bloqueado,26.6604
+2026-05-13 17:13:05.592,Random Forest,10.0.0.1,Recon,Bloqueado,15.8014
+2026-05-13 17:13:06.599,Random Forest,10.0.0.1,Mirai-Botnet,Bloqueado,15.6531
+2026-05-13 17:13:07.596,Random Forest,10.0.0.1,Spoofing,Bloqueado,13.2473
+2026-05-13 17:13:08.601,Random Forest,10.0.0.1,Mirai-Botnet,Bloqueado,14.3855
+2026-05-13 17:13:09.602,Random Forest,10.0.0.1,DoS-UDP/ICMP,Bloqueado,12.9608
+2026-05-13 17:13:10.617,Random Forest,10.0.0.1,Mirai-Botnet,Bloqueado,25.9956
+2026-05-13 17:13:11.607,Random Forest,10.0.0.1,Recon,Bloqueado,16.1585
+2026-05-13 17:13:12.610,Random Forest,10.0.0.1,DoS-UDP/ICMP,Bloqueado,13.3754
+2026-05-13 17:13:13.605,Random Forest,10.0.0.1,Outros,Bloqueado,13.8221
+2026-05-13 17:13:14.617,Random Forest,10.0.0.1,Outros,Bloqueado,23.7354
+2026-05-13 17:13:15.615,Random Forest,10.0.0.1,Recon,Bloqueado,16.6935
+2026-05-13 17:13:16.624,Random Forest,10.0.0.1,Outros,Bloqueado,25.4793
+2026-05-13 17:13:17.614,Random Forest,10.0.0.1,Mirai-Botnet,Bloqueado,13.3706
+2026-05-13 17:13:18.621,Random Forest,10.0.0.1,Mirai-Botnet,Bloqueado,16.0403
+2026-05-13 17:13:19.622,Random Forest,10.0.0.1,DoS-UDP/ICMP,Bloqueado,13.0629
+2026-05-13 17:13:20.621,Random Forest,10.0.0.1,Spoofing,Bloqueado,12.9979
+2026-05-13 17:13:21.621,Random Forest,10.0.0.1,Mirai-Botnet,Bloqueado,14.276
+2026-05-13 17:13:22.634,Random Forest,10.0.0.1,Recon,Bloqueado,24.8812
+2026-05-13 17:13:23.629,Random Forest,10.0.0.1,DoS-TCP,Bloqueado,14.346
+2026-05-13 17:13:24.635,Random Forest,10.0.0.1,Spoofing,Bloqueado,15.2395
+2026-05-13 17:13:25.634,Random Forest,10.0.0.1,Mirai-Botnet,Bloqueado,14.8769
+2026-05-13 17:13:26.634,Random Forest,10.0.0.1,Outros,Bloqueado,13.8964
+2026-05-13 17:13:27.632,Random Forest,10.0.0.1,Recon,Bloqueado,13.8545
+2026-05-13 17:13:28.637,Random Forest,10.0.0.1,DDoS-TCP,Bloqueado,14.897
+2026-05-13 17:13:29.643,Random Forest,10.0.0.1,DDoS-UDP/ICMP,Bloqueado,16.4823
+2026-05-13 17:13:30.639,Random Forest,10.0.0.1,Recon,Bloqueado,14.8259
+2026-05-13 17:13:31.640,Random Forest,10.0.0.1,Mirai-Botnet,Bloqueado,13.4373
+2026-05-13 17:13:32.650,Random Forest,10.0.0.1,DDoS-UDP/ICMP,Bloqueado,15.8236
+2026-05-13 17:13:33.645,Random Forest,10.0.0.1,BruteForce,Bloqueado,14.2828
+2026-05-13 17:13:34.649,Random Forest,10.0.0.1,DDoS-UDP/ICMP,Bloqueado,13.413
+2026-05-13 17:13:35.645,Random Forest,10.0.0.1,Recon,Bloqueado,14.1036
+2026-05-13 17:13:36.648,Random Forest,10.0.0.1,Spoofing,Bloqueado,14.2572
+2026-05-13 17:13:37.676,Random Forest,10.0.0.1,Recon,Bloqueado,39.4818
+2026-05-13 17:13:38.649,Random Forest,10.0.0.1,Recon,Bloqueado,13.3007
+2026-05-13 17:13:39.654,Random Forest,10.0.0.1,Recon,Bloqueado,14.8742
+2026-05-13 17:13:40.659,Random Forest,10.0.0.1,DDoS-UDP/ICMP,Bloqueado,12.7297
+2026-05-13 17:13:41.669,Random Forest,10.0.0.1,Outros,Bloqueado,27.7698
+2026-05-13 17:13:42.658,Random Forest,10.0.0.1,Spoofing,Bloqueado,12.563
+2026-05-13 17:13:43.667,Random Forest,10.0.0.1,DDoS-TCP,Bloqueado,15.6408
+2026-05-13 17:13:44.678,Random Forest,10.0.0.1,Spoofing,Bloqueado,25.8745
+2026-05-13 17:13:45.668,Random Forest,10.0.0.1,Mirai-Botnet,Bloqueado,15.0384
+2026-05-13 17:14:30.740,XGBoost,10.0.0.1,Recon,Bloqueado,13.6053
+2026-05-13 17:14:31.734,XGBoost,10.0.0.1,Mirai-Botnet,Bloqueado,3.4623
+2026-05-13 17:14:32.734,XGBoost,10.0.0.1,Recon,Bloqueado,2.9804
+2026-05-13 17:14:33.740,XGBoost,10.0.0.1,DoS-UDP/ICMP,Bloqueado,2.9076
+2026-05-13 17:14:34.746,XGBoost,10.0.0.1,DoS-UDP/ICMP,Bloqueado,5.697
+2026-05-13 17:14:35.744,XGBoost,10.0.0.1,DoS-TCP,Bloqueado,4.0357
+2026-05-13 17:14:36.750,XGBoost,10.0.0.1,DDoS-UDP/ICMP,Bloqueado,4.727
+2026-05-13 17:14:37.744,XGBoost,10.0.0.1,Recon,Bloqueado,3.7153
+2026-05-13 17:14:38.747,XGBoost,10.0.0.1,DoS-TCP,Bloqueado,2.6346
+2026-05-13 17:14:39.766,XGBoost,10.0.0.1,BruteForce,Bloqueado,16.3047
+2026-05-13 17:14:40.752,XGBoost,10.0.0.1,DDoS-TCP,Bloqueado,2.7219
+2026-05-13 17:14:41.754,XGBoost,10.0.0.1,DoS-TCP,Bloqueado,3.2713
+2026-05-13 17:14:42.752,XGBoost,10.0.0.1,Recon,Bloqueado,2.4045
+2026-05-13 17:14:43.757,XGBoost,10.0.0.1,DoS-TCP,Bloqueado,2.8165
+2026-05-13 17:14:44.762,XGBoost,10.0.0.1,Spoofing,Bloqueado,6.5722
+2026-05-13 17:14:45.759,XGBoost,10.0.0.1,Spoofing,Bloqueado,2.4648
+2026-05-13 17:14:46.759,XGBoost,10.0.0.1,Recon,Bloqueado,2.902
+2026-05-13 17:14:47.765,XGBoost,10.0.0.1,Outros,Bloqueado,4.322
+2026-05-13 17:14:48.768,XGBoost,10.0.0.1,DDoS-TCP,Bloqueado,4.3376
+2026-05-13 17:14:49.773,XGBoost,10.0.0.1,DDoS-TCP,Bloqueado,5.4971
+2026-05-13 17:14:50.772,XGBoost,10.0.0.1,Mirai-Botnet,Bloqueado,3.8339
+2026-05-13 17:14:51.777,XGBoost,10.0.0.1,Recon,Bloqueado,6.6282
+2026-05-13 17:14:52.777,XGBoost,10.0.0.1,DDoS-UDP/ICMP,Bloqueado,2.3405
+2026-05-13 17:14:53.780,XGBoost,10.0.0.1,DoS-UDP/ICMP,Bloqueado,3.0734
+2026-05-13 17:14:54.774,XGBoost,10.0.0.1,Normal,Permitido,2.4263
+2026-05-13 17:14:55.779,XGBoost,10.0.0.1,DDoS-TCP,Bloqueado,2.9451
+2026-05-13 17:14:56.783,XGBoost,10.0.0.1,DoS-UDP/ICMP,Bloqueado,3.7477
+2026-05-13 17:14:57.787,XGBoost,10.0.0.1,Spoofing,Bloqueado,5.1926
+2026-05-13 17:14:58.789,XGBoost,10.0.0.1,BruteForce,Bloqueado,4.9207
+2026-05-13 17:14:59.783,XGBoost,10.0.0.1,Outros,Bloqueado,2.226
+2026-05-13 17:15:00.788,XGBoost,10.0.0.1,DDoS-TCP,Bloqueado,3.5089
+2026-05-13 17:15:01.790,XGBoost,10.0.0.1,DoS-UDP/ICMP,Bloqueado,2.9994
+2026-05-13 17:15:02.786,XGBoost,10.0.0.1,Outros,Bloqueado,3.7165
+2026-05-13 17:15:03.809,XGBoost,10.0.0.1,DDoS-UDP/ICMP,Bloqueado,10.2607
+2026-05-13 17:15:04.793,XGBoost,10.0.0.1,Recon,Bloqueado,3.6247
+2026-05-13 17:15:05.797,XGBoost,10.0.0.1,Normal,Permitido,5.5005
+2026-05-13 17:15:06.798,XGBoost,10.0.0.1,Normal,Permitido,4.3369
+2026-05-13 17:15:07.802,XGBoost,10.0.0.1,Normal,Permitido,5.1806
+2026-05-13 17:15:08.802,XGBoost,10.0.0.1,DoS-TCP,Bloqueado,3.2366
+2026-05-13 17:15:09.804,XGBoost,10.0.0.1,DDoS-TCP,Bloqueado,3.9225
+2026-05-13 17:15:10.807,XGBoost,10.0.0.1,DDoS-UDP/ICMP,Bloqueado,2.5228
+2026-05-13 17:15:11.810,XGBoost,10.0.0.1,DoS-TCP,Bloqueado,3.1236
+2026-05-13 17:15:12.810,XGBoost,10.0.0.1,BruteForce,Bloqueado,2.9251
+2026-05-13 17:15:13.811,XGBoost,10.0.0.1,Spoofing,Bloqueado,2.7676
+2026-05-13 17:15:14.814,XGBoost,10.0.0.1,DDoS-UDP/ICMP,Bloqueado,2.924
+2026-05-13 17:15:15.814,XGBoost,10.0.0.1,DDoS-TCP,Bloqueado,2.4004
+2026-05-13 17:15:16.813,XGBoost,10.0.0.1,Recon,Bloqueado,2.8716
+2026-05-13 17:15:17.830,XGBoost,10.0.0.1,DoS-UDP/ICMP,Bloqueado,9.1225
+2026-05-13 17:15:18.832,XGBoost,10.0.0.1,Normal,Permitido,15.8878
+2026-05-13 17:15:19.852,XGBoost,10.0.0.1,DoS-TCP,Bloqueado,14.4146
+2026-05-13 17:15:20.844,XGBoost,10.0.0.1,DoS-UDP/ICMP,Bloqueado,11.331
+2026-05-13 17:15:21.826,XGBoost,10.0.0.1,BruteForce,Bloqueado,3.0129
+2026-05-13 17:15:22.834,XGBoost,10.0.0.1,DDoS-TCP,Bloqueado,5.9685
+2026-05-13 17:15:23.834,XGBoost,10.0.0.1,DDoS-TCP,Bloqueado,4.9187
+2026-05-13 17:15:24.842,XGBoost,10.0.0.1,Spoofing,Bloqueado,4.5881
+2026-05-13 17:15:25.831,XGBoost,10.0.0.1,Normal,Permitido,3.9122
+2026-05-13 17:15:26.834,XGBoost,10.0.0.1,Normal,Permitido,3.3065
+2026-05-13 17:15:27.833,XGBoost,10.0.0.1,Normal,Permitido,2.6994
+2026-05-13 17:15:28.837,XGBoost,10.0.0.1,DoS-TCP,Bloqueado,2.3413
+2026-05-13 17:15:29.840,XGBoost,10.0.0.1,Recon,Bloqueado,4.5661
+2026-05-13 17:15:30.869,XGBoost,10.0.0.1,Mirai-Botnet,Bloqueado,7.4896
+2026-05-13 17:15:31.845,XGBoost,10.0.0.1,Spoofing,Bloqueado,3.6589
+2026-05-13 17:15:32.874,XGBoost,10.0.0.1,Mirai-Botnet,Bloqueado,23.8986
+2026-05-13 17:15:33.856,XGBoost,10.0.0.1,DoS-UDP/ICMP,Bloqueado,4.9578
+2026-05-13 17:15:34.857,XGBoost,10.0.0.1,Mirai-Botnet,Bloqueado,6.4707
+2026-05-13 17:15:35.853,XGBoost,10.0.0.1,Normal,Permitido,4.4531
+2026-05-13 17:15:36.860,XGBoost,10.0.0.1,DoS-UDP/ICMP,Bloqueado,3.9254
+2026-05-13 17:15:37.855,XGBoost,10.0.0.1,Normal,Permitido,4.113
+2026-05-13 17:15:38.860,XGBoost,10.0.0.1,Normal,Permitido,5.7745
+2026-05-13 17:15:39.860,XGBoost,10.0.0.1,Recon,Bloqueado,5.311
+2026-05-13 17:15:40.859,XGBoost,10.0.0.1,Spoofing,Bloqueado,2.7288
+2026-05-13 17:15:41.860,XGBoost,10.0.0.1,Mirai-Botnet,Bloqueado,2.5775
+2026-05-13 17:15:42.869,XGBoost,10.0.0.1,Mirai-Botnet,Bloqueado,4.6429
+2026-05-13 17:15:43.876,XGBoost,10.0.0.1,DoS-UDP/ICMP,Bloqueado,5.5786
+2026-05-13 17:15:44.873,XGBoost,10.0.0.1,Spoofing,Bloqueado,5.6865
+2026-05-13 17:15:45.873,XGBoost,10.0.0.1,Mirai-Botnet,Bloqueado,3.2852
+2026-05-13 17:15:46.870,XGBoost,10.0.0.1,Recon,Bloqueado,2.6511
+2026-05-13 17:15:47.877,XGBoost,10.0.0.1,DoS-TCP,Bloqueado,4.2835
+2026-05-13 17:15:48.875,XGBoost,10.0.0.1,Spoofing,Bloqueado,2.5844
+2026-05-13 17:15:49.875,XGBoost,10.0.0.1,Mirai-Botnet,Bloqueado,2.3995
+2026-05-13 17:15:50.878,XGBoost,10.0.0.1,Normal,Permitido,3.4627
+2026-05-13 17:15:51.876,XGBoost,10.0.0.1,Recon,Bloqueado,2.5156
+2026-05-13 17:15:52.885,XGBoost,10.0.0.1,DoS-TCP,Bloqueado,4.1331
+2026-05-13 17:15:53.885,XGBoost,10.0.0.1,DDoS-UDP/ICMP,Bloqueado,3.217
+2026-05-13 17:15:54.886,XGBoost,10.0.0.1,Recon,Bloqueado,5.991
+2026-05-13 17:15:55.888,XGBoost,10.0.0.1,Mirai-Botnet,Bloqueado,3.621
+2026-05-13 17:15:56.889,XGBoost,10.0.0.1,DDoS-UDP/ICMP,Bloqueado,2.628
+2026-05-13 17:15:57.888,XGBoost,10.0.0.1,BruteForce,Bloqueado,2.2783
+2026-05-13 17:15:58.898,XGBoost,10.0.0.1,DDoS-UDP/ICMP,Bloqueado,4.3945
+2026-05-13 17:15:59.895,XGBoost,10.0.0.1,Recon,Bloqueado,5.2652
+2026-05-13 17:16:00.902,XGBoost,10.0.0.1,Spoofing,Bloqueado,5.764
+2026-05-13 17:16:01.894,XGBoost,10.0.0.1,Recon,Bloqueado,2.4902
+2026-05-13 17:16:02.898,XGBoost,10.0.0.1,Recon,Bloqueado,4.2592
+2026-05-13 17:16:03.898,XGBoost,10.0.0.1,Recon,Bloqueado,3.8318
+2026-05-13 17:16:04.915,XGBoost,10.0.0.1,DDoS-UDP/ICMP,Bloqueado,5.3398
+2026-05-13 17:16:05.900,XGBoost,10.0.0.1,Normal,Permitido,2.7564
+2026-05-13 17:16:06.923,XGBoost,10.0.0.1,Spoofing,Bloqueado,11.3522
+2026-05-13 17:16:07.911,XGBoost,10.0.0.1,DDoS-TCP,Bloqueado,5.4049
+2026-05-13 17:16:08.917,XGBoost,10.0.0.1,Spoofing,Bloqueado,6.5697
+2026-05-13 17:16:09.911,XGBoost,10.0.0.1,Mirai-Botnet,Bloqueado,2.9034
