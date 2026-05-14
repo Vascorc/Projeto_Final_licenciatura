@@ -1,8 +1,7 @@
-dados nos graficos por classes de anomalias
-retirar :    if 'WEB' in label: return 'Web-Attack'
-do dataset
+guardar ips malicioses para mais tarde ser possivel antes do pacote ser analisado o ip estar registado como ataque e ser logo bloquesdo.
 
+escutar ataques num servidor 
+    -tentar simular rudo no mininet, tentar ate usar uma maquina virtual para simulacao dentro do mininet
+    -servidor vai escutar dados que vao passar no router, tem de escutar antes de passar no router!
 
-pronto entao ajuda me a criar um fichiero python o mais simples possivel pois nao tenho muita experiencia a mexer com estas coisas que faca o seguinte. envie o ficheiro mqtt (por enqunato essa parte pode estar comentada para nao onterferir).
-
-que faca as mitigacoes, tinhamos vito estas
+atacar com base de dados grande
