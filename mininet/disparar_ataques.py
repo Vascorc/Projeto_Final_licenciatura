@@ -5,37 +5,43 @@ import time
 # 1. CONFIGURAÇÕES
 IP_ALVO = "10.0.0.2" # IP do host h2 no Mininet
 PORTA = 5005
-# AJUSTADO: Nome exato do teu ficheiro
-FICHEIRO_CSV = "../analise_network/datasets/dataset_ataque_pequeno.csv" 
+FICHEIRO_CSV = "../analise_network/datasets/dataset_ataque_grande.csv" 
+
+# AJUSTE DE VELOCIDADE: 
+# 0.005 = ~200 pacotes por segundo (Bom equilíbrio para o Scapy não perder pacotes)
+ATRASO = 0.05
 
 sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-print(f"Simulação: Enviando dados de '{FICHEIRO_CSV}' para {IP_ALVO}...")
+print(f"🚀 Simulação: Enviando dados de '{FICHEIRO_CSV}' para {IP_ALVO}...")
+
+contador = 0
+tempo_inicio = time.time()
 
 try:
     with open(FICHEIRO_CSV, 'r') as f:
         reader = csv.reader(f)
-        next(reader) # Pula a linha do Header (Header_Length, Protocol Type, etc.)
+        next(reader) # Pula a linha do Header
         
         for linha in reader:
-            # O CSV tem 41 colunas:
-            # - Colunas 0 a 38: Características (39 totais)
-            # - Coluna 39: Label (DOS-TCP_FLOOD)
-            # - Coluna 40: categoria (DoS-TCP)
-            
-            # Usamos [:-2] para enviar APENAS as primeiras 39 (até à 'Variance')
             dados_para_ia = linha[:-2] 
-            
             mensagem = ",".join(dados_para_ia)
             sock.sendto(mensagem.encode(), (IP_ALVO, PORTA))
             
-            print(f"[SENT] {len(dados_para_ia)} features (Variance={dados_para_ia[-1]})")
+            contador += 1
             
-            # Espera 1 segundo para não "afogar" o Ubuntu
-            time.sleep(1)
+            # Mostra o progresso apenas a cada 1000 pacotes para não abrandar o CPU!
+            if contador % 1000 == 0:
+                print(f"[PROGRESSO] {contador} ataques já disparados...")
+            
+            # Pausa milimétrica para a IA do outro lado ter tempo de processar
+            if ATRASO > 0:
+                time.sleep(ATRASO)
+                
+    tempo_fim = time.time()
+    minutos = (tempo_fim - tempo_inicio) / 60
+    print(f"\n✅ Simulação terminada! Foram enviados {contador} pacotes em {minutos:.2f} minutos.")
             
 except FileNotFoundError:
-    print(f"ERRO: O ficheiro '{FICHEIRO_CSV}' não existe no diretório /root do Kali!")
+    print(f"ERRO: O ficheiro '{FICHEIRO_CSV}' não existe!")
 except Exception as e:
     print(f"Erro inesperado: {e}")
-
-print("Simulação terminada!")

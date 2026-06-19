@@ -31,8 +31,10 @@ sudo python3 topo_mitigacao.py
 ### 3. Abrir os Terminais das Máquinas
 Dentro da consola do Mininet, abre os terminais individuais para o atacante e para a vítima:
 ```bash
-mininet> xterm h1 ServidorIA
+mininet> xterm h1 h2
 ```
+
+
 
 ### 4. Iniciar a Defesa (no terminal do h2)
 No terminal que abriu para o **h2**, inicia o sistema de escuta e mitigação:

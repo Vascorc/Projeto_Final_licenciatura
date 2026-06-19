@@ -10,21 +10,8 @@ from scapy.all import sniff, IP
 print("-----------A iniciar Sistema de Mitigação no Edge------------")
 
 # Caminhos 
-CAMINHO_MODELO = '../analise_network/modelos/XGBoost/modelo_ciberseguranca_xgb.pkl'
-CAMINHO_ENCODER = '../analise_network/modelos/XGBoost/label_encoder_categorias_xgb.pkl'
-
-# SISTEMA DE BLACKLIST 
-FICHEIRO_BLACKLIST = "blacklist_ips.txt"
-ips_bloqueados = set()
-
-# Carregar IPs que já estavam bloqueados em simulações anteriores
-if os.path.exists(FICHEIRO_BLACKLIST):
-    with open(FICHEIRO_BLACKLIST, 'r') as f:
-        for linha in f:
-            ips_bloqueados.add(linha.strip())
-print(f"🛡️ Blacklist carregada: {len(ips_bloqueados)} IPs já banidos.\n")
-
-
+CAMINHO_MODELO = '../analise_network/modelos/LightGBM/modelo_ciberseguranca_LGBM.pkl'
+CAMINHO_ENCODER = '../analise_network/modelos/LightGBM/label_encoder_categorias_lgbm.pkl'
 
 try:
     modelo = joblib.load(CAMINHO_MODELO)
@@ -61,8 +48,6 @@ except Exception as e:
     print(f"Erro ao carregar modelos: {e}")
     exit()
 
-
-
 # FUNÇÃO DE EXECUÇÃO DE FIREWALL E LOGS 
 def executar_comando(comando):
     os.system(comando)
@@ -76,7 +61,7 @@ def registar_log_csv(ip_origem, classe, acao, tempo_ms):
     existe = os.path.isfile(ficheiro)
     agora = datetime.now().strftime("%Y-%m-%d %H:%M:%S.%f")[:-3]
     
-    # extrair o nome do modelo a partir do caminho que estás a usar
+    # Vamos extrair o nome do modelo a partir do caminho que estás a usar
     nome_modelo = CAMINHO_MODELO.split('/')[-2]
     
     with open(ficheiro, mode='a', newline='', encoding='utf-8') as f:
@@ -97,7 +82,6 @@ def aplicar_mitigacao(classe, ip_atacante, tempo_ms):
         executar_comando(f"iptables -A INPUT -p tcp --dport 22 -s {ip_atacante} -j REJECT")
     
     print(f"-->Mitigação aplicada para: {classe} (IP: {ip_atacante}) - Tempo de IA: {tempo_ms:.2f} ms")
-
 
 #  PROCESSAMENTO EM TEMPO REAL 
 def processar_pacote_em_tempo_real(dados_lista, ip_origem):
@@ -126,14 +110,6 @@ def processar_pacote_em_tempo_real(dados_lista, ip_origem):
 
     if classe_detetada != 'Normal':
         print(f"ALERTA: {classe_detetada} detetado do IP {ip_origem}! (Variância: {variancia:.2f})")
-        
-        # --- NOVO: ADICIONAR À BLACKLIST ---
-        if ip_origem not in ips_bloqueados:
-            ips_bloqueados.add(ip_origem)
-            with open(FICHEIRO_BLACKLIST, 'a') as f:
-                f.write(ip_origem + "\n")
-        # -----------------------------------
-        
         aplicar_mitigacao(classe_detetada, ip_origem, tempo_ms)
         acao = "Bloqueado"
     else:
@@ -148,12 +124,6 @@ def capturar_pacote(pacote):
     # Verificamos se é um pacote IP e se traz dados UDP na porta 5005
     if IP in pacote and pacote.haslayer('UDP') and pacote.dport == 5005:
         ip_origem = pacote[IP].src
-        
-        # --- NOVO: VERIFICAÇÃO DE BLACKLIST ANTES DE PROCESSAR ---
-        if ip_origem in ips_bloqueados:
-            print(f"⛔ DESCARTADO: O IP {ip_origem} está na Blacklist (Ataque Travado sem IA!)")
-            return # Aborta o processamento aqui, poupando CPU
-        # ---------------------------------------------------------
         
         try:
             # Extraímos a mensagem (o texto do CSV que é enviado)
@@ -176,8 +146,7 @@ def capturar_pacote(pacote):
 print("\nATIVADO: A ouvir a rede...")
 try:
     # Este comando fica a ouvir todas as interfaces e chama a função 'capturar_pacote' para cada IP que vir
-    # MUDANÇA PARA TOPOLOGIA NOVA: Se usares o ServidorIA, a interface é "any". 
-    # Se testares sem ele, podes meter "Defensor-eth0" novamente.
+    # A interface é a h2-eth0 conforme configurámos!
     sniff(iface="h2-eth0", prn=capturar_pacote, store=0)
 except KeyboardInterrupt:
     print("\n Monitorização parada.")
