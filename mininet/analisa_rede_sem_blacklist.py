@@ -10,17 +10,18 @@ from scapy.all import sniff, IP
 print("-----------A iniciar Sistema de Mitigação no Edge------------")
 
 # Caminhos 
-CAMINHO_MODELO = '../analise_network/modelos/LightGBM/modelo_ciberseguranca_LGBM.pkl'
-CAMINHO_ENCODER = '../analise_network/modelos/LightGBM/label_encoder_categorias_lgbm.pkl'
+CAMINHO_MODELO = '../analise_network/modelos/XGBoost/modelo_ciberseguranca_xgb.pkl'
+CAMINHO_ENCODER = '../analise_network/modelos/XGBoost/label_encoder_categorias_xgb.pkl'
+
+# --- NOVO: BUFFER EM MEMÓRIA RAM PARA EVITAR LENTIDÃO DE DISCO ---
+buffer_logs = []
+# -----------------------------------------------------------------
 
 try:
     modelo = joblib.load(CAMINHO_MODELO)
     le = joblib.load(CAMINHO_ENCODER)
     
     # Carregar o Scaler caso exista na mesma pasta. 
-    #O Scaler serve para colocar todos os valores de entrada na mesma escala (ex: 0 a 1)
-    # para que modelos como as Redes Neuronais (MLP) não fiquem enviesados por valores altos.
-    # Modelos de árvore (LightGBM, Random Forest) não precisam, por isso ele só carrega se existir.
     pasta_modelo = os.path.dirname(CAMINHO_MODELO)
     ficheiro_scaler = next((f for f in os.listdir(pasta_modelo) if 'scaler' in f.lower() and f.endswith('.pkl')), None)
     
@@ -48,27 +49,34 @@ except Exception as e:
     print(f"Erro ao carregar modelos: {e}")
     exit()
 
-# FUNÇÃO DE EXECUÇÃO DE FIREWALL E LOGS 
 def executar_comando(comando):
     os.system(comando)
-    # pass # comentado apenas para simulação, em caso real a execucao do comando é realizada
 
-def registar_log_csv(ip_origem, classe, acao, tempo_ms):
-    ficheiro = "./dados_apos_ataque/historico_testes_modelos.csv"
-    # Criar a diretoria se não existir para não dar erro
-    os.makedirs(os.path.dirname(ficheiro), exist_ok=True)
-    
-    existe = os.path.isfile(ficheiro)
+# ALTERADO: Agora apenas adiciona à lista na RAM (Super Rápido!)
+def registar_log_memoria(ip_origem, classe, acao, tempo_ms):
     agora = datetime.now().strftime("%Y-%m-%d %H:%M:%S.%f")[:-3]
-    
-    # Vamos extrair o nome do modelo a partir do caminho que estás a usar
     nome_modelo = CAMINHO_MODELO.split('/')[-2]
     
+    # Guarda temporariamente na RAM
+    buffer_logs.append([agora, nome_modelo, ip_origem, classe, acao, round(tempo_ms, 4)])
+
+# NOVA FUNÇÃO: Escreve tudo no disco quando fechas o programa
+def descarregar_buffer_para_csv():
+    if not buffer_logs:
+        print("\nNenhum dado capturado para guardar.")
+        return
+        
+    ficheiro = "./dados_apos_ataque/historico_testes_modelos.csv"
+    os.makedirs(os.path.dirname(ficheiro), exist_ok=True)
+    existe = os.path.isfile(ficheiro)
+    
+    print(f"\n💾 A gravar {len(buffer_logs)} registos no disco... Por favor aguarda!")
     with open(ficheiro, mode='a', newline='', encoding='utf-8') as f:
         writer = csv.writer(f)
         if not existe:
             writer.writerow(["DataHora", "Modelo_IA", "IP_Origem", "Classe_Detetada", "Acao_Tomada", "Tempo_Resposta_ms"])
-        writer.writerow([agora, nome_modelo, ip_origem, classe, acao, round(tempo_ms, 4)])
+        writer.writerows(buffer_logs) # Escreve as milhares de linhas de uma só vez!
+    print("✅ Todos os dados foram guardados com sucesso no CSV!")
 
 def aplicar_mitigacao(classe, ip_atacante, tempo_ms):
     if classe in ['DDoS-TCP', 'DoS-TCP']:
@@ -85,27 +93,21 @@ def aplicar_mitigacao(classe, ip_atacante, tempo_ms):
 
 #  PROCESSAMENTO EM TEMPO REAL 
 def processar_pacote_em_tempo_real(dados_lista, ip_origem):
-    # Convertemos a lista para DataFrame
     df_pacote = pd.DataFrame([dados_lista], columns=nomes_features)
     
-    # Iniciar temporizador
     inicio = time.perf_counter()
     
-    # IMPORTANTE: Se tivermos um Scaler (MLP), temos de normalizar os dados antes de prever!
     if scaler is not None:
         X_teste = scaler.transform(df_pacote)
     else:
         X_teste = df_pacote
         
-    # Previsão
     previsao_num = modelo.predict(X_teste)[0]
     classe_detetada = le.inverse_transform([previsao_num])[0]
     
-    # Parar temporizador
     fim = time.perf_counter()
-    tempo_ms = (fim - inicio) * 1000 # Converter de segundos para milissegundos
+    tempo_ms = (fim - inicio) * 1000 
     
-    # A variância é a última feature na lista (índice -1)
     variancia = dados_lista[-1]
 
     if classe_detetada != 'Normal':
@@ -116,23 +118,18 @@ def processar_pacote_em_tempo_real(dados_lista, ip_origem):
         print(f"Tráfego Normal de {ip_origem}. (Variância: {variancia:.2f})")
         acao = "Permitido"
         
-    # Guardar os dados no Excel/CSV para a tua tese
-    registar_log_csv(ip_origem, classe_detetada, acao, tempo_ms)
+    # Guardar na RAM em vez do arquivo físico
+    registar_log_memoria(ip_origem, classe_detetada, acao, tempo_ms)
  
 # MODO ESCUTA
 def capturar_pacote(pacote):
-    # Verificamos se é um pacote IP e se traz dados UDP na porta 5005
     if IP in pacote and pacote.haslayer('UDP') and pacote.dport == 5005:
         ip_origem = pacote[IP].src
         
         try:
-            # Extraímos a mensagem (o texto do CSV que é enviado)
             payload = pacote['Raw'].load.decode('utf-8')
-            
-            # Convertemos a string "0.1, 2.5, 0.0..." numa lista de números reais
             features_reais = [float(x) for x in payload.split(',')]
             
-            # Verificação de Segurança
             if len(features_reais) == n_features:
                 processar_pacote_em_tempo_real(features_reais, ip_origem)
             else:
@@ -140,13 +137,13 @@ def capturar_pacote(pacote):
                       f"mas o modelo precisa de {n_features}.")
                       
         except Exception as e:
-            # Mostramos o erro caso rebente, em vez de o silenciar com 'pass'
             print(f"Erro interno ao processar pacote: {e}")
 
 print("\nATIVADO: A ouvir a rede...")
 try:
-    # Este comando fica a ouvir todas as interfaces e chama a função 'capturar_pacote' para cada IP que vir
-    # A interface é a h2-eth0 conforme configurámos!
     sniff(iface="h2-eth0", prn=capturar_pacote, store=0)
 except KeyboardInterrupt:
-    print("\n Monitorização parada.")
+    print("\n Monitorização parada pelo utilizador.")
+finally:
+    # IMPORTANTE: Garante que descarrega os dados se o utilizador fechar ou carregar Ctrl+C
+    descarregar_buffer_para_csv()
