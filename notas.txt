@@ -8,3 +8,10 @@ atacar com base de dados grande
 ----------------------------------
 falta por agora:
 testar edge com dataset diferente so pelo sim pelo nao
+
+
+-----------
+questoues a coolocar:
+- no relatorio falamos muito em edge e processamente edge etc. 
+  mas com a mudanca para o processaento num servidor nao faz sentido continuar a referir edge
+- 
