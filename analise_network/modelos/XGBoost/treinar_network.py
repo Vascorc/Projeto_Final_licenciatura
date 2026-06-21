@@ -7,7 +7,7 @@ import joblib
 import gc
 
 # --- CONFIGURAÇÃO ---
-caminho_dataset = '../../datasets/dataset_treino_balanceado_10k.csv' 
+caminho_dataset = '../../datasets/dataset_treino.csv' 
 
 print("🚀 A INICIAR SISTEMA DE TREINO DE CIBERSEGURANÇA (XGBOOST PURO)...")
 print("1. A carregar o dataset balanceado...")

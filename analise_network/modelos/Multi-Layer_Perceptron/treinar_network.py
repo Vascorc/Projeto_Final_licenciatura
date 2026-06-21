@@ -7,7 +7,7 @@ import joblib
 
 # --- CONFIGURAÇÃO ---
 # 1. MUDANÇA: Usar apenas o dataset reduzido e balanceado!
-caminho_dataset = '../../datasets/dataset_treino_balanceado_10k.csv' 
+caminho_dataset = '../../datasets/dataset_treino.csv' 
 
 print("🧠 A INICIAR SISTEMA DE TREINO DE CIBERSEGURANÇA (REDE NEURONAL - MLP)...")
 print("1. A carregar dataset balanceado (vai ser muito mais rápido!)...")

@@ -1,4 +1,4 @@
-analise_network/datasets/Merged*
+analise_network/datasets/dataset*
 analise_rodoviaria/datasets/*
 analise_network/modelos/Random Forest/modelo_ciberseguranca_rf.pkl
 analise_rodoviaria/modelos/LightGBM/modelo_peoes_lgbm.pkl
@@ -7,3 +7,4 @@ analise_rodoviaria/modelos/Regressão Linear/modelo_peoes_lr.pkl
 analise_rodoviaria/modelos/LightGBM/modelo_transito_lgbm.pkl
 analise_rodoviaria/modelos/Random Forest/modelo_transito_rf.pkl
 analise_rodoviaria/modelos/Regressão Linear/modelo_transito_lr.pkl
+mininet/dados_apos_ataque/historico_testes_modelos.csv

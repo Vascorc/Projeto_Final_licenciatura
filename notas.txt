@@ -5,3 +5,6 @@ escutar ataques num servidor
     -servidor vai escutar dados que vao passar no router, tem de escutar antes de passar no router!
 
 atacar com base de dados grande
+----------------------------------
+falta por agora:
+testar edge com dataset diferente so pelo sim pelo nao

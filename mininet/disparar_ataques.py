@@ -9,7 +9,7 @@ FICHEIRO_CSV = "../analise_network/datasets/dataset_ataque_grande.csv"
 
 # AJUSTE DE VELOCIDADE: 
 # 0.005 = ~200 pacotes por segundo (Bom equilíbrio para o Scapy não perder pacotes)
-ATRASO = 0.05
+ATRASO = 1
 
 sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 print(f"🚀 Simulação: Enviando dados de '{FICHEIRO_CSV}' para {IP_ALVO}...")

@@ -8,7 +8,7 @@ import gc
 
 # --- CONFIGURAÇÃO ---
 # 1. MUDANÇA: Agora só carregamos o ficheiro levezinho e balanceado!
-caminho_dataset = '../../datasets/dataset_treino_balanceado_10k.csv' 
+caminho_dataset = '../../datasets/dataset_treino.csv' 
 
 print("🚀 A INICIAR SISTEMA DE TREINO DE CIBERSEGURANÇA (LIGHTGBM PURO E LEVE)...")
 print("1. A carregar dataset balanceado (vai ser super rápido!)...")
