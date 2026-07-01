@@ -11,7 +11,7 @@ print("1. A carregar ficheiros de Validação...")
 
 try:
     # Lê os ficheiros do 06 ao 10 ou ajusta o caminho para o teu novo ficheiro de validação
-    df = pd.read_csv('./../datasets/dataset_validar_treino.csv', low_memory=False)
+    df = pd.read_csv('../datasets/dataset_validar_treino.csv', low_memory=False)
     print(f"✅ Oceano de dados carregado! Total de pacotes a testar: {len(df)}")
 except FileNotFoundError:
     print("❌ ERRO: Ficheiro de validação não encontrado.")
@@ -130,26 +130,30 @@ cores = ['#3498DB', '#2ECC71', '#E67E22', '#9B59B6']
 
 # GRÁFICO 1: GLOBAIS
 fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(15, 6))
-fig.suptitle('Métricas Globais (Teste Cego - Mundo Real)', fontsize=16, fontweight='bold')
+fig.suptitle('Métricas Globais (Teste Cego - Mundo Real)', fontsize=20, fontweight='bold')
 
 ax1.bar(nomes_modelos, resultados_acc, color=cores, edgecolor='black', alpha=0.8)
-ax1.set_title('Accuracy Global (%) ↑', fontsize=14, pad=15)
+ax1.set_title('Accuracy Global (%) ↑', fontsize=16, pad=15)
 ax1.set_ylim(min(resultados_acc) - 1 if min(resultados_acc) > 1 else 0, 100.5)
+ax1.tick_params(axis='x', labelsize=14)
+ax1.tick_params(axis='y', labelsize=12)
 for i, v in enumerate(resultados_acc):
-    ax1.text(i, v + 0.1, f"{v:.2f}%", ha='center', fontweight='bold')
+    ax1.text(i, v + 0.1, f"{v:.2f}%", ha='center', fontweight='bold', fontsize=13)
 
 ax2.bar(nomes_modelos, resultados_f1, color=cores, edgecolor='black', alpha=0.8)
-ax2.set_title('F1-Score Ponderado (%) ↑', fontsize=14, pad=15)
+ax2.set_title('F1-Score Ponderado (%) ↑', fontsize=16, pad=15)
 ax2.set_ylim(min(resultados_f1) - 1 if min(resultados_f1) > 1 else 0, 100.5)
+ax2.tick_params(axis='x', labelsize=14)
+ax2.tick_params(axis='y', labelsize=12)
 for i, v in enumerate(resultados_f1):
-    ax2.text(i, v + 0.1, f"{v:.2f}%", ha='center', fontweight='bold')
+    ax2.text(i, v + 0.1, f"{v:.2f}%", ha='center', fontweight='bold', fontsize=13)
 
 plt.tight_layout()
 plt.savefig('grafico_teste_cego_global.png', dpi=300, bbox_inches='tight')
 
 # GRÁFICO 2: POR ANOMALIA
 fig2, ax3 = plt.subplots(figsize=(18, 8))
-fig2.suptitle('Taxa de Acertos no Teste Cego (Recall %)', fontsize=16, fontweight='bold')
+fig2.suptitle('Taxa de Acertos no Teste Cego (Recall %)', fontsize=20, fontweight='bold')
 
 x = np.arange(len(nomes_das_classes)) 
 largura_barra = 0.20
@@ -160,10 +164,11 @@ for i, nome_modelo in enumerate(nomes_modelos):
     ax3.bar(posicao, valores_modelo, largura_barra, label=nome_modelo, color=cores[i], edgecolor='black', alpha=0.8)
 
 ax3.set_xticks(x)
-ax3.set_xticklabels(nomes_das_classes, rotation=45, ha='right', fontsize=11, fontweight='bold')
-ax3.set_ylabel('Percentagem de Acertos (%)', fontsize=12)
+ax3.set_xticklabels(nomes_das_classes, rotation=45, ha='right', fontsize=14, fontweight='bold')
+ax3.tick_params(axis='y', labelsize=12)
+ax3.set_ylabel('Percentagem de Acertos (%)', fontsize=16)
 ax3.set_ylim(0, 105)
-ax3.legend(fontsize=12, loc='lower right')
+ax3.legend(fontsize=14, loc='lower right')
 
 ax3.axhline(y=90, color='red', linestyle='--', alpha=0.5, label='Meta 90%')
 
