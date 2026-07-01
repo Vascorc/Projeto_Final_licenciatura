@@ -106,9 +106,10 @@ for nome_modelo, modelo in modelos.items():
 print("\n" + "="*50)
 
 # GERAR GRÁFICOS ESPECÍFICOS
-print("5. A gerar gráficos específicos (Normal, BruteForce, Recon)...")
+print("5. A gerar gráficos específicos em formato 4x4 (Normal, BruteForce, Recon)...")
 plt.style.use('seaborn-v0_8-whitegrid')
 cores = ['#3498DB', '#2ECC71', '#E67E22', '#9B59B6'] 
+nomes_curtos = ['LightGBM', 'RF', 'XGBoost', 'MLP']
 
 categorias_alvo = ['Normal', 'BruteForce', 'Recon']
 
@@ -117,26 +118,30 @@ for categoria in categorias_alvo:
         print(f"Aviso: Categoria {categoria} não encontrada no dicionário original!")
         continue
         
-    fig, ax = plt.subplots(figsize=(12, 7))
-    fig.suptitle(f'Taxa de Acertos - Categoria: {categoria}', fontsize=20, fontweight='bold')
+    fig, ax = plt.subplots(figsize=(4, 4))
+    fig.suptitle(f'Taxa de Acertos - {categoria}', fontsize=12, fontweight='bold')
     
     valores = [acertos_por_anomalia[categoria][i] for i in range(len(nomes_modelos))]
     
-    barras = ax.bar(nomes_modelos, valores, color=cores, edgecolor='black', alpha=0.8, width=0.5)
+    barras = ax.bar(nomes_curtos, valores, color=cores, edgecolor='black', alpha=0.8, width=0.6)
     
-    ax.set_ylabel('Percentagem de Acertos (%)', fontsize=16)
+    ax.set_ylabel('Acertos (%)', fontsize=10)
     ax.set_ylim(0, 105)
-    ax.tick_params(axis='x', labelsize=14)
-    ax.tick_params(axis='y', labelsize=12)
+    ax.tick_params(axis='x', labelsize=9)
+    ax.tick_params(axis='y', labelsize=8)
     
     # Adicionar os valores em cima das barras
     for barra in barras:
         altura = barra.get_height()
         ax.text(barra.get_x() + barra.get_width()/2., altura + 1.5,
-                f'{altura:.2f}%', ha='center', va='bottom', fontsize=14, fontweight='bold')
+                f'{altura:.1f}%', ha='center', va='bottom', fontsize=8, fontweight='bold')
                 
-    ax.axhline(y=90, color='red', linestyle='--', alpha=0.5, label='Meta 90%')
-    ax.legend(fontsize=14, loc='lower right')
+    if categoria == 'Normal':
+        ax.axhline(y=90, color='red', linestyle='--', alpha=0.5, label='Meta 90%')
+    else:
+        ax.axhline(y=80, color='red', linestyle='--', alpha=0.5, label='Meta 80%')
+        
+    ax.legend(fontsize=8, loc='lower right')
     
     plt.tight_layout()
     nome_ficheiro = f'grafico_teste_cego_{categoria.lower()}.png'
