@@ -1,0 +1,7 @@
+slide sobre como seria em produção
+	- abordar questões de uso de mecanismos de recolha de dados e estatísticas para que a ia possa analisar
+	- falar também da aprendizagem ativa onde a ia pode ir sendo treinada a medida que vai sendo usada em proucao
+
+
+o modelo Multi-Layer Perceptron (MLP) revelou-se a
+solução ótima neste trabalho.
