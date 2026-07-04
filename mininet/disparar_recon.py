@@ -3,15 +3,16 @@ import csv
 import time
 import random
 
+# 1. CONFIGURAÇÕES
 IP_ALVO = "10.0.0.2" # IP do host h2 no Mininet
 PORTA = 5005
-FICHEIRO_CSV = "../analise_network/datasets/dataset_benigno.csv" 
+FICHEIRO_CSV = "../analise_network/datasets/dataset_recon.csv" 
 
 # 0.005 = ~200 pacotes por segundo 
 ATRASO = 1
 
 sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-print(f"🚀 Simulação: Enviando tráfego benigno de '{FICHEIRO_CSV}' para {IP_ALVO}...")
+print(f"🚀 Simulação: Enviando tráfego de reconhecimento (Recon) de '{FICHEIRO_CSV}' para {IP_ALVO}...")
 
 contador = 0
 tempo_inicio = time.time()
@@ -21,12 +22,12 @@ try:
         reader = csv.reader(f)
         next(reader) # Pula a linha do Header
         
-        linhas_benignas = list(reader)
+        linhas_recon = list(reader)
         
-    # Baralhar aleatoriamente os pacotes benignos
-    random.shuffle(linhas_benignas)
+    # Baralhar aleatoriamente os ataques recon
+    random.shuffle(linhas_recon)
     
-    for linha in linhas_benignas:
+    for linha in linhas_recon:
         dados_para_ia = linha[:-2] 
         mensagem = ",".join(dados_para_ia)
         sock.sendto(mensagem.encode(), (IP_ALVO, PORTA))
@@ -35,7 +36,7 @@ try:
         
         # Mostra o progresso apenas a cada 1000 pacotes para não abrandar o CPU!
         if contador % 1000 == 0:
-            print(f"[PROGRESSO] {contador} pacotes benignos já disparados...")
+            print(f"[PROGRESSO] {contador} pacotes recon já disparados...")
         
         # Pausa milimétrica para a IA do outro lado ter tempo de processar
         if ATRASO > 0:

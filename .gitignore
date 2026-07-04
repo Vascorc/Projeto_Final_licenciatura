@@ -1,5 +1,3 @@
-analise_network/datasets/dataset*
-analise_rodoviaria/datasets/*
 analise_network/modelos/Random Forest/modelo_ciberseguranca_rf.pkl
 analise_rodoviaria/modelos/LightGBM/modelo_peoes_lgbm.pkl
 analise_rodoviaria/modelos/Random Forest/modelo_peoes_rf.pkl

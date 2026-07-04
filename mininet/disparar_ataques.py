@@ -2,13 +2,11 @@ import socket
 import csv
 import time
 
-# 1. CONFIGURAÇÕES
 IP_ALVO = "10.0.0.2" # IP do host h2 no Mininet
 PORTA = 5005
 FICHEIRO_CSV = "../analise_network/datasets/dataset_validar_treino.csv" 
 
-# AJUSTE DE VELOCIDADE: 
-# 0.005 = ~200 pacotes por segundo (Bom equilíbrio para o Scapy não perder pacotes)
+# 0.005 = ~200 pacotes por segundo
 ATRASO = 1
 
 sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
