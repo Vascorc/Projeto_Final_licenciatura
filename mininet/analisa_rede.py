@@ -52,6 +52,16 @@ except Exception as e:
     print(f"Erro ao carregar modelos: {e}")
     exit()
 
+
+FICHEIRO_LOG_RECON = "alertas_recon.log"
+
+def registar_alerta(mensagem):
+    timestamp = time.strftime("%Y-%m-%d %H:%M:%S")
+    linha = f"[{timestamp}] {mensagem}"
+    print(f"⚠️  {linha}")
+    with open(FICHEIRO_LOG_RECON, 'a') as f:
+        f.write(linha + "\n")
+        
 # FUNÇÃO DE EXECUÇÃO DE FIREWALL
 def executar_comando(comando):
     os.system(comando)
@@ -66,6 +76,8 @@ def aplicar_mitigacao(classe, ip_atacante, tempo_ms):
         executar_comando(f"iptables -A INPUT -s {ip_atacante} -j DROP")
     elif classe == 'BruteForce':
         executar_comando(f"iptables -A INPUT -p tcp --dport 22 -s {ip_atacante} -j REJECT")
+    elif classe == 'Recon':
+        registar_alerta(f"[AVISO] Possível reconhecimento detetado - IP: {ip_atacante}")
     
     print(f"--> Mitigação aplicada para: {classe} (IP: {ip_atacante}) - Tempo de IA: {tempo_ms:.2f} ms")
 
@@ -91,14 +103,16 @@ def processar_pacote_em_tempo_real(dados_lista, ip_origem):
 
     if classe_detetada != 'Normal':
         print(f"ALERTA: {classe_detetada} detetado do IP {ip_origem}! (Variância: {variancia:.2f})")
-        
-        # --- ADICIONAR À BLACKLIST ---
-        if ip_origem not in ips_bloqueados:
-            ips_bloqueados.add(ip_origem)
-            with open(FICHEIRO_BLACKLIST, 'a') as f:
-                f.write(ip_origem + "\n")
-        
-        aplicar_mitigacao(classe_detetada, ip_origem, tempo_ms)
+    
+        # Recon não é bloqueado automaticamente — apenas registado
+        if classe_detetada == 'Recon':
+            aplicar_mitigacao(classe_detetada, ip_origem, tempo_ms)
+        else:
+            if ip_origem not in ips_bloqueados:
+                ips_bloqueados.add(ip_origem)
+                with open(FICHEIRO_BLACKLIST, 'a') as f:
+                    f.write(ip_origem + "\n")
+            aplicar_mitigacao(classe_detetada, ip_origem, tempo_ms)
     else:
         print(f"Tráfego Normal de {ip_origem}. (Variância: {variancia:.2f})")
 

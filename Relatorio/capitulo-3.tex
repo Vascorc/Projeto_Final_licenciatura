@@ -1,0 +1,73 @@
+\chapter{Tecnologias e Ferramentas Utilizadas}
+\label{chap:tecno-ferra}
+
+\section{Introdução}
+\label{chap3:sec:intro}
+O desenvolvimento de um sistema capaz de realizar a deteção e mitigação de anomalias no tráfego de uma \textit{Smart City} exige uma seleção rigorosa de tecnologias que equilibrem o poder preditivo com a eficiência computacional. Dada a natureza da infraestrutura em dispositivos \ac{IoT}, em que é necessário processar fluxos massivos de dados em tempo real, frequentemente com recursos de hardware limitados.
+
+Este capítulo detalha as linguagens, bibliotecas e os fundamentos teóricos dos algoritmos de \textit{Machine Learning} escolhidos para este projeto. O capítulo encontra-se organizado da seguinte forma: a Secção \ref{chap3:sec:ling} apresenta o ecossistema de programação; a Secção \ref{chap3:sec:algoritmos} explora os quatro algoritmos avaliados (\ac{XGBoost}, Random Forest, \ac{LightGBM} e \ac{MLP}); a Secção \ref{chap3:sec:arq} descreve o paradigma de \textit{Edge Computing}; finalmente, a Secção \ref{chap3:sec:concs} sintetiza as conclusões do capítulo.
+
+\section{Linguagens de Programação e Bibliotecas}
+\label{chap3:sec:ling}
+
+A implementação do fluxo de dados e o treino dos modelos foram desenvolvidos em \textbf{Python}. Esta escolha justifica-se pela vasta disponibilidade de bibliotecas especializadas em \textit{Data Science} e Cibersegurança. Destacam-se as seguintes ferramentas:
+
+\begin{itemize}
+    \item \textbf{Pandas:} Utilizada para a manipulação de \textit{DataFrames}. Foi essencial para fundir os volumes do \textit{dataset} CICIoT2023 e realizar a amostragem estratificada para equilibrar as classes.
+    
+    \item \textbf{Scikit-Learn:} Utilizada para a divisão de dados (\texttt{train\_test\_split}), implementação do \texttt{LabelEncoder} e cálculo de métricas como o F1-Score \cite{pedregosa2011scikit}. O \texttt{LabelEncoder} é vital para traduzir categorias textuais (ex: "DDoS-TCP") em formato numérico processável pelos modelos.
+    
+    \item \textbf{XGBoost e LightGBM:} Bibliotecas de \textit{Gradient Boosting} otimizadas. Enquanto o XGBoost foca-se na precisão máxima \cite{chen2016xgboost}, o LightGBM é desenhado para ser "leve" e rápido, consumindo menos memória \textit{Random Access Memory} (RAM), sendo ideal para cenários de \textit{Edge Computing} \cite{ke2017lightgbm}.
+    
+    \item \textbf{Joblib:} Crucial para a persistência dos modelos e do \texttt{LabelEncoder} em ficheiros \textit{.pkl}. Estes ficheiros permitem que o modelo treinado seja carregado instantaneamente no \textit{Edge Router} sem necessidade de re-treino.
+    
+    \item \textbf{Mininet e Emulação de Redes Virtuais:} Um emulador de redes de computadores capaz de criar uma rede virtual completa --- contendo \textit{switches}, \textit{routers} e \textit{hosts}.
+\end{itemize}
+
+
+\section{Algoritmos de Machine Learning}
+\label{chap3:sec:algoritmos}
+Neste projeto, procedeu-se a uma análise comparativa entre algoritmos baseados em árvores de decisão e redes neuronais \cite{AlGaradi2020, Roopak2019}.
+
+\subsection{XGBoost}
+O \ac{XGBoost} foi selecionado como o "vencedor técnico" preliminar devido à sua elevada precisão \cite{chen2016xgboost, Ahmad2018}. Ele utiliza uma arquitetura de \textit{Gradient Boosting} que permite capturar padrões não-lineares complexos em tráfego de rede, distinguindo com eficácia nuances entre diferentes tipos de ataques \textit{Transmission Control Protocol} (\ac{TCP}) e \textit{User Datagram Protocol} (\ac{UDP}) \cite{Berman2019}.
+
+\subsection{Random Forest Classifier}
+Ao contrário do regressor inicial, utilizou-se a versão de classificação para identificar categorias de ataques. O \textit{Random Forest} constrói múltiplas árvores de decisão independentes, sendo particularmente robusto face a dados ruidosos. Revelou-se essencial para detetar ataques furtivos como \textit{Recon} e \textit{Spoofing}.
+
+\subsection{LightGBM}
+O \ac{LightGBM} destaca-se pela sua eficiência em \textit{Edge Computing} \cite{ke2017lightgbm}. Ao crescer por folhas (\textit{leaf-wise}) em vez de níveis, reduz a latência de inferência e o tamanho do ficheiro final, sendo ideal para dispositivos com armazenamento limitado \cite{AlGaradi2020}.
+
+\subsection{MLP}
+Para divergir da lógica de árvores, introduziu-se o \ac{MLP}, uma rede neuronal que utiliza "neurónios" matemáticos interligados \cite{Berman2019}. Esta arquitetura tenta mimetizar o cérebro humano para detetar padrões subtis que regras rígidas de "se/então" podem ignorar \cite{AlGaradi2020}.
+
+\section{Arquitetura (IoT)}
+\label{chap3:sec:arq}
+
+\subsection{Edge Computing}
+O paradigma de \textit{Edge Computing} aproxima a inteligência artificial da fonte dos dados. Ao executar os modelos diretamente nos \textit{Routers} da \textit{Smart City}, a mitigação de ataques é feita com latência zero, descartando pacotes maliciosos antes que estes atinjam o núcleo da rede \cite{Chen2019}.
+
+\section{Conclusões}
+\label{chap3:sec:concs}
+
+A análise tecnológica efetuada neste capítulo permitiu estabelecer uma base
+sólida para a seleção dos algoritmos a avaliar empiricamente. Os modelos
+baseados em árvores de decisão, nomeadamente o XGBoost e o Random Forest,
+destacam-se pela sua elevada capacidade preditiva, sendo candidatos naturais
+para cenários onde a precisão estatística é o critério dominante.
+
+O LightGBM surge como um candidato intermédio promissor para \textit{Edge
+Computing}, combinando uma boa precisão com menor consumo de memória e
+tempos de inferência mais reduzidos face aos modelos anteriores. Contudo,
+como será demonstrado empiricamente no Capítulo~5, a análise comparativa
+em ambiente de simulação revelou que nenhum destes modelos baseados em
+árvores consegue satisfazer plenamente o requisito crítico de latência
+ultrabaixa e estabilidade de resposta exigidos por um \textit{Edge Router}
+sob ataque volumétrico.
+
+É neste contexto que o Multi-Layer Perceptron (MLP), pela sua arquitetura
+matricial intrínseca, emerge como a solução ótima para \textit{deployment}
+na periferia da rede, sacrificando uma margem negligenciável de exatidão
+pura em prol de uma velocidade operacional e estabilidade determinística
+incomparáveis. Estas ferramentas formam, em conjunto, a base para a
+implementação e análise crítica detalhadas no capítulo seguinte.

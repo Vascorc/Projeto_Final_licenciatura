@@ -1,0 +1,50 @@
+\chapter{Introdução}
+\label{chap:intro}
+
+\section{Enquadramento}
+\label{sec:amb}
+
+Na última década, o conceito de \textit{Smart Cities} (Cidades Inteligentes) tem-se expandido rapidamente, apoiado pelo aumento de dispositivos \ac{IoT}. Estes dispositivos, que incluem desde sensores de temperatura e semáforos inteligentes a câmaras de vigilância, recolhem e transmitem dados continuamente para melhorar a eficiência urbana e a qualidade de vida dos cidadãos.
+
+No entanto, a adoção massiva destas tecnologias trouxe desafios de segurança. Os dispositivos \ac{IoT} possuem, na sua esmagadora maioria, capacidades computacionais e de armazenamento extremamente limitadas, o que impossibilita a execução de ferramentas de antivírus ou \textit{firewalls} complexas. Esta vulnerabilidade tem sido explorada por cibercriminosos para lançar ataques devastadores, como o software malicioso \textit{Mirai}, que transforma milhares de dispositivos vulneráveis numa rede \textit{zombie} capaz de orquestrar ataques de \ac{DDoS} à escala global.
+
+É neste contexto que surge o paradigma de \textit{Edge Computing}, que propõe a deslocação do poder de processamento da nuvem (\textit{Cloud}) para a periferia da rede (o \textit{Edge}), como por exemplo os \textit{routers} de acesso. Ao colocar a inteligência mais próxima da origem dos dados, torna-se possível analisar o tráfego e intercetar ameaças em tempo real.
+
+Este projeto foi desenvolvido no contexto da unidade curricular de Projeto da \ac{UBI}, visando a criação de uma solução prática e inovadora para este desafio.
+
+\section{Motivação}
+\label{sec:mot}
+
+A motivação principal para o desenvolvimento deste projeto prende-se com a ineficiência das soluções de segurança tradicionais quando aplicadas a redes \ac{IoT}. A abordagem clássica de enviar todo o tráfego de rede para servidores centrais na nuvem para análise de segurança gera uma latência insustentável e consome uma largura de banda massiva. Em cenários críticos de uma \textit{Smart City}, um atraso de poucos segundos na deteção de um ataque pode resultar na indisponibilidade de serviços essenciais.
+
+Além disso, as regras estáticas de bloqueio de \ac{IP} são insuficientes contra ameaças modernas e evasivas (como \textit{Spoofing} ou \textit{Zero-Day}). É então fundamental colocar sistemas autónomos de \ac{IA} na periferia da rede, capazes de aprender os padrões legítimos e intercetar anomalias de forma cirúrgica, minimizando a sobrecarga no \textit{hardware}.
+
+\section{Objetivos}
+\label{sec:obj}
+
+O objetivo central deste projeto é desenvolver, testar e emular um sistema autónomo de deteção e mitigação de ameaças cibernéticas otimizado para \textit{Edge Computing} em redes \ac{IoT}. 
+
+Para atingir este propósito, definiram-se os seguintes objetivos específicos:
+\begin{enumerate}
+    \item Estudar e pré-processar um conjunto de dados moderno e representativo de tráfego \ac{IoT} (o \textit{dataset} CICIoT2023), aplicando técnicas de balanceamento de classes para resolver a assimetria entre tráfego normal e anómalo.
+    \item Treinar e comparar o desempenho de diferentes algoritmos de \textit{Machine Learning}, focando a análise no equilíbrio entre a taxa de acertos e o consumo de recursos computacionais (\ac{LightGBM}, \ac{XGBoost}, Random Forest e \ac{MLP}).
+    \item Desenvolver um módulo de mitigação automatizada que atue como ponte entre as previsões do modelo de \ac{IA} e a componente de \textit{firewall} do sistema operativo (\textit{iptables}), aplicando regras de bloqueio ou quarentena em tempo real.
+  \item Validar o sistema desenvolvido num ambiente realista de rede, recorrendo ao emulador \textit{Mininet} para construir uma topologia representativa de \textit{Edge Computing}, comprovando a eficácia da solução proposta na interceção e mitigação de anomalias em tempo real.
+\end{enumerate}
+\section{Organização do Documento}
+\label{sec:organ}
+
+De modo a refletir o trabalho desenvolvido e a metodologia aplicada, este documento encontra-se estruturado em seis capítulos principais:
+\begin{itemize}
+    \item O \textbf{Capítulo 1 -- Introdução} -- enquadra o tema das redes \ac{IoT} e da segurança cibernética, descrevendo a motivação, o problema a resolver e os objetivos propostos para o projeto.
+    
+    \item O \textbf{Capítulo 2 -- Estado da Arte} -- apresenta uma revisão bibliográfica sobre as abordagens atuais de deteção de intrusões em \ac{IoT}, evidenciando as lacunas existentes e justificando a necessidade de abordagens baseadas em \textit{Machine Learning} no \textit{Edge}.
+    
+    \item O \textbf{Capítulo 3 -- Tecnologias e Ferramentas Utilizadas} -- descreve os conceitos teóricos fundamentais, os algoritmos de \ac{IA} selecionados e as ferramentas de emulação de rede que suportam o desenvolvimento da arquitetura.
+    
+    \item O \textbf{Capítulo 4 -- Engenharia de Software e Arquitetura do Sistema} -- descreve o levantamento de requisitos, a arquitetura modular da aplicação e o fluxo de execução do sistema de mitigação autónoma.
+    
+    \item O \textbf{Capítulo 5 -- Implementação e Testes} -- detalha todo o processo de engenharia de dados, o treino dos modelos, a análise crítica dos resultados do "Teste Cego" e a justificação técnica para a escolha final do algoritmo.
+    
+    \item O \textbf{Capítulo 6 -- Conclusões e Trabalho Futuro} -- sintetiza as principais descobertas do projeto, reflete sobre o cumprimento dos objetivos iniciais e propõe futuras linhas de investigação e melhorias do sistema desenvolvido.
+\end{itemize}
